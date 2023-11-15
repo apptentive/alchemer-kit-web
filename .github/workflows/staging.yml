@@ -1,0 +1,65 @@
+name: Staging
+on:
+  pull_request:
+    types: [ labeled, opened, synchronize, reopened ]
+    branches:
+      - main
+
+# TODO: id-token: write is needed for configure-aws-credentials
+# but it seems to wipe out all other permissions and breaks other steps
+permissions: write-all
+
+jobs:
+  coverage:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci --ignore-scripts
+      - name: Run Tests
+        run: npm run test:ci
+      - name: Report code coverage
+        uses: zgosalvez/github-actions-report-lcov@v1
+        with:
+          coverage-files: coverage/lcov.info
+          minimum-coverage: 90
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          artifact-name: code-coverage-report
+          working-directory: ./
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: "contains(github.event.pull_request.labels.*.name, 'hotfix')"
+    needs: [coverage]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Build library
+        run: npm run build:all
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::089941056973:role/github-actions-apptentive-javascript
+      - name: Deploy to staging
+        run: npm run deploy:staging
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_ID }}
+          PATHS: '/staging/ /next/'
