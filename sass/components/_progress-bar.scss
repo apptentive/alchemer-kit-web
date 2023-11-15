@@ -1,0 +1,27 @@
+.apptentive-progress-bar {
+  appearance: none;
+  background-color: $gray-300;
+  border-radius: $border-radius;
+  display: block;
+  height: 6px;
+  overflow: hidden;
+  width: 100%;
+
+  &::-webkit-progress-bar {
+    background-color: $gray-300;
+  }
+
+  // This must remain separate from the rule below or Chrome will not respect it
+  &::-webkit-progress-value {
+    background-color: $blue-input;
+    border-radius: $border-radius;
+    transition: all 200ms ease-out;
+  }
+
+  // While this says progress-bar, it actually means the value element
+  &::-moz-progress-bar {
+    border-radius: $border-radius;
+    background-color: $blue-input;
+    transition: all 200ms ease-out;
+  }
+}

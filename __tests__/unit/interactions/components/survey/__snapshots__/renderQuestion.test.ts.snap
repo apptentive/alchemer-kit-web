@@ -1,0 +1,925 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderQuestion properly renders multichoice question 1`] = `
+<question
+  class="apptentive-survey-question multichoice"
+  id="question-multichoice-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    Which would you like to see first?
+  </h2>
+  <question-instructions>
+    (select one)
+  </question-instructions>
+  <fieldset>
+    <legend>
+      Options
+    </legend>
+    <answer-choices>
+      <answer-choice
+        id="choice-container-multichoice-answer-1"
+      >
+        <input
+          class="multichoice"
+          id="choice-input-multichoice-answer-1"
+          name="multichoice-question"
+          tabindex="0"
+          title="Better user interface"
+          type="radio"
+          value="multichoice-answer-1"
+        />
+        <label
+          for="choice-input-multichoice-answer-1"
+        >
+          Better user interface
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multichoice-answer-2"
+      >
+        <input
+          class="multichoice"
+          id="choice-input-multichoice-answer-2"
+          name="multichoice-question"
+          tabindex="0"
+          title="Cloud support"
+          type="radio"
+          value="multichoice-answer-2"
+        />
+        <label
+          for="choice-input-multichoice-answer-2"
+        >
+          Cloud support
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multichoice-answer-3"
+      >
+        <input
+          class="multichoice"
+          id="choice-input-multichoice-answer-3"
+          name="multichoice-question"
+          tabindex="0"
+          title="Login with Facebook / Google / Twitter"
+          type="radio"
+          value="multichoice-answer-3"
+        />
+        <label
+          for="choice-input-multichoice-answer-3"
+        >
+          Login with Facebook / Google / Twitter
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multichoice-answer-other"
+      >
+        <input
+          class="multichoice"
+          id="choice-input-multichoice-answer-other"
+          name="multichoice-question"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="radio"
+          value="multichoice-answer-other"
+        />
+        <input
+          class="other-input"
+          id="choice-other-input-multichoice-answer-other"
+          name="multichoice-question-other"
+          placeholder="Other (Please Specify)"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="text"
+        />
+      </answer-choice>
+    </answer-choices>
+  </fieldset>
+</question>
+`;
+
+exports[`renderQuestion properly renders multiline question 1`] = `
+<question
+  class="apptentive-survey-question singleline"
+  id="question-multiline-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    Is there anything you'd like to add?
+  </h2>
+  <question-instructions />
+  <answer-choices>
+    <answer-choice
+      class="choice-container"
+    >
+      <textarea
+        aria-label="Is there anything you'd like to add?"
+        class="singleline"
+        name="multiline-question"
+        rows="4"
+        tabindex="0"
+        title="Is there anything you'd like to add?"
+      />
+    </answer-choice>
+  </answer-choices>
+</question>
+`;
+
+exports[`renderQuestion properly renders multiselect question 1`] = `
+<question
+  class="apptentive-survey-question multiselect"
+  id="question-multiselect-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    Which two qualities for an app are the most important to you?
+  </h2>
+  <question-instructions>
+    Required (select up to 2)
+  </question-instructions>
+  <fieldset>
+    <legend>
+      Options
+    </legend>
+    <answer-choices>
+      <answer-choice
+        id="choice-container-multiselect-answer-1"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-1"
+          name="multiselect-question"
+          tabindex="0"
+          title="Speed"
+          type="checkbox"
+          value="multiselect-answer-1"
+        />
+        <label
+          for="choice-input-multiselect-answer-1"
+        >
+          Speed
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-2"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-2"
+          name="multiselect-question"
+          tabindex="0"
+          title="Easy to use"
+          type="checkbox"
+          value="multiselect-answer-2"
+        />
+        <label
+          for="choice-input-multiselect-answer-2"
+        >
+          Easy to use
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-3"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-3"
+          name="multiselect-question"
+          tabindex="0"
+          title="Reliability"
+          type="checkbox"
+          value="multiselect-answer-3"
+        />
+        <label
+          for="choice-input-multiselect-answer-3"
+        >
+          Reliability
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-4"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-4"
+          name="multiselect-question"
+          tabindex="0"
+          title="Works offline"
+          type="checkbox"
+          value="multiselect-answer-4"
+        />
+        <label
+          for="choice-input-multiselect-answer-4"
+        >
+          Works offline
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-other"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-other"
+          name="multiselect-question"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="checkbox"
+          value="multiselect-answer-other"
+        />
+        <input
+          class="other-input"
+          id="choice-other-input-multiselect-answer-other"
+          name="multiselect-question-other"
+          placeholder="Other (Please Specify)"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="text"
+        />
+      </answer-choice>
+    </answer-choices>
+  </fieldset>
+</question>
+`;
+
+exports[`renderQuestion properly renders nps question 1`] = `
+<question
+  class="apptentive-survey-question nps"
+  id="question-nps-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    How likely is it that you would recommend this app to a friend or colleague?
+  </h2>
+  <question-instructions />
+  <answer-choice-container>
+    <fieldset>
+      <legend>
+        Options
+      </legend>
+      <answer-choices>
+        <answer-choice
+          id="choice-container-nps-question-0"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-0"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="0"
+          />
+          <label
+            for="choice-input-nps-question-0"
+          >
+            0
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-1"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-1"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="1"
+          />
+          <label
+            for="choice-input-nps-question-1"
+          >
+            1
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-2"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-2"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="2"
+          />
+          <label
+            for="choice-input-nps-question-2"
+          >
+            2
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-3"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-3"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="3"
+          />
+          <label
+            for="choice-input-nps-question-3"
+          >
+            3
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-4"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-4"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="4"
+          />
+          <label
+            for="choice-input-nps-question-4"
+          >
+            4
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-5"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-5"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="5"
+          />
+          <label
+            for="choice-input-nps-question-5"
+          >
+            5
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-6"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-6"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="6"
+          />
+          <label
+            for="choice-input-nps-question-6"
+          >
+            6
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-7"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-7"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="7"
+          />
+          <label
+            for="choice-input-nps-question-7"
+          >
+            7
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-8"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-8"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="8"
+          />
+          <label
+            for="choice-input-nps-question-8"
+          >
+            8
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-9"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-9"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="9"
+          />
+          <label
+            for="choice-input-nps-question-9"
+          >
+            9
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-nps-question-10"
+        >
+          <input
+            class="range-option"
+            id="choice-input-nps-question-10"
+            name="nps-question"
+            tabindex="0"
+            type="radio"
+            value="10"
+          />
+          <label
+            for="choice-input-nps-question-10"
+          >
+            10
+          </label>
+        </answer-choice>
+      </answer-choices>
+    </fieldset>
+    <answer-choice-labels>
+      <answer-min-label>
+        Not at all likely
+      </answer-min-label>
+      <answer-max-label>
+        Extremely likely
+      </answer-max-label>
+    </answer-choice-labels>
+  </answer-choice-container>
+</question>
+`;
+
+exports[`renderQuestion properly renders question missing a value 1`] = `
+<question
+  class="apptentive-survey-question multiselect"
+  id="question-multiselect-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  />
+  <question-instructions>
+    Required (select up to 2)
+  </question-instructions>
+  <fieldset>
+    <legend>
+      Options
+    </legend>
+    <answer-choices>
+      <answer-choice
+        id="choice-container-multiselect-answer-1"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-1"
+          name="multiselect-question"
+          tabindex="0"
+          title="Speed"
+          type="checkbox"
+          value="multiselect-answer-1"
+        />
+        <label
+          for="choice-input-multiselect-answer-1"
+        >
+          Speed
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-2"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-2"
+          name="multiselect-question"
+          tabindex="0"
+          title="Easy to use"
+          type="checkbox"
+          value="multiselect-answer-2"
+        />
+        <label
+          for="choice-input-multiselect-answer-2"
+        >
+          Easy to use
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-3"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-3"
+          name="multiselect-question"
+          tabindex="0"
+          title="Reliability"
+          type="checkbox"
+          value="multiselect-answer-3"
+        />
+        <label
+          for="choice-input-multiselect-answer-3"
+        >
+          Reliability
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-4"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-4"
+          name="multiselect-question"
+          tabindex="0"
+          title="Works offline"
+          type="checkbox"
+          value="multiselect-answer-4"
+        />
+        <label
+          for="choice-input-multiselect-answer-4"
+        >
+          Works offline
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-other"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-other"
+          name="multiselect-question"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="checkbox"
+          value="multiselect-answer-other"
+        />
+        <input
+          class="other-input"
+          id="choice-other-input-multiselect-answer-other"
+          name="multiselect-question-other"
+          placeholder="Other (Please Specify)"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="text"
+        />
+      </answer-choice>
+    </answer-choices>
+  </fieldset>
+</question>
+`;
+
+exports[`renderQuestion properly renders question with instructions 1`] = `
+<question
+  class="apptentive-survey-question multiselect"
+  id="question-multiselect-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    Which two qualities for an app are the most important to you?
+  </h2>
+  <question-instructions>
+    Required (Instructions)
+  </question-instructions>
+  <fieldset>
+    <legend>
+      Options
+    </legend>
+    <answer-choices>
+      <answer-choice
+        id="choice-container-multiselect-answer-1"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-1"
+          name="multiselect-question"
+          tabindex="0"
+          title="Speed"
+          type="checkbox"
+          value="multiselect-answer-1"
+        />
+        <label
+          for="choice-input-multiselect-answer-1"
+        >
+          Speed
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-2"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-2"
+          name="multiselect-question"
+          tabindex="0"
+          title="Easy to use"
+          type="checkbox"
+          value="multiselect-answer-2"
+        />
+        <label
+          for="choice-input-multiselect-answer-2"
+        >
+          Easy to use
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-3"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-3"
+          name="multiselect-question"
+          tabindex="0"
+          title="Reliability"
+          type="checkbox"
+          value="multiselect-answer-3"
+        />
+        <label
+          for="choice-input-multiselect-answer-3"
+        >
+          Reliability
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-4"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-4"
+          name="multiselect-question"
+          tabindex="0"
+          title="Works offline"
+          type="checkbox"
+          value="multiselect-answer-4"
+        />
+        <label
+          for="choice-input-multiselect-answer-4"
+        >
+          Works offline
+        </label>
+      </answer-choice>
+      <answer-choice
+        id="choice-container-multiselect-answer-other"
+      >
+        <input
+          class="multiselect"
+          id="choice-input-multiselect-answer-other"
+          name="multiselect-question"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="checkbox"
+          value="multiselect-answer-other"
+        />
+        <input
+          class="other-input"
+          id="choice-other-input-multiselect-answer-other"
+          name="multiselect-question-other"
+          placeholder="Other (Please Specify)"
+          tabindex="0"
+          title="Other (Please Specify)"
+          type="text"
+        />
+      </answer-choice>
+    </answer-choices>
+  </fieldset>
+</question>
+`;
+
+exports[`renderQuestion properly renders range question 1`] = `
+<question
+  class="apptentive-survey-question range"
+  id="question-range-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    How likely is it that you would recommend this app to a friend or colleague?
+  </h2>
+  <question-instructions />
+  <answer-choice-container>
+    <fieldset>
+      <legend>
+        Options
+      </legend>
+      <answer-choices>
+        <answer-choice
+          id="choice-container-range-question-1"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-1"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="1"
+          />
+          <label
+            for="choice-input-range-question-1"
+          >
+            1
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-2"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-2"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="2"
+          />
+          <label
+            for="choice-input-range-question-2"
+          >
+            2
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-3"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-3"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="3"
+          />
+          <label
+            for="choice-input-range-question-3"
+          >
+            3
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-4"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-4"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="4"
+          />
+          <label
+            for="choice-input-range-question-4"
+          >
+            4
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-5"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-5"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="5"
+          />
+          <label
+            for="choice-input-range-question-5"
+          >
+            5
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-6"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-6"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="6"
+          />
+          <label
+            for="choice-input-range-question-6"
+          >
+            6
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-7"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-7"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="7"
+          />
+          <label
+            for="choice-input-range-question-7"
+          >
+            7
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-8"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-8"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="8"
+          />
+          <label
+            for="choice-input-range-question-8"
+          >
+            8
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-9"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-9"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="9"
+          />
+          <label
+            for="choice-input-range-question-9"
+          >
+            9
+          </label>
+        </answer-choice>
+        <answer-choice
+          id="choice-container-range-question-10"
+        >
+          <input
+            class="range-option"
+            id="choice-input-range-question-10"
+            name="range-question"
+            tabindex="0"
+            type="radio"
+            value="10"
+          />
+          <label
+            for="choice-input-range-question-10"
+          >
+            10
+          </label>
+        </answer-choice>
+      </answer-choices>
+    </fieldset>
+    <answer-choice-labels>
+      <answer-min-label>
+        Not at all
+      </answer-min-label>
+      <answer-max-label>
+        Completely
+      </answer-max-label>
+    </answer-choice-labels>
+  </answer-choice-container>
+</question>
+`;
+
+exports[`renderQuestion properly renders singleline question 1`] = `
+<question
+  class="apptentive-survey-question singleline"
+  id="question-singleline-question"
+>
+  <h2
+    class="apptentive-survey-question-value"
+  >
+    Is there anything you'd like to add?
+  </h2>
+  <question-instructions />
+  <answer-choices>
+    <answer-choice
+      class="choice-container"
+    >
+      <input
+        aria-label="Is there anything you'd like to add?"
+        class="singleline"
+        name="singleline-question"
+        placeholder="Enter any feedback you have"
+        tabindex="0"
+        title="Is there anything you'd like to add?"
+        type="text"
+      />
+    </answer-choice>
+  </answer-choices>
+</question>
+`;

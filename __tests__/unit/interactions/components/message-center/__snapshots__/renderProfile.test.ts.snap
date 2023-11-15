@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderProfile properly renders profile that is optional 1`] = `
+<div
+  class="apptentive-message-center-profile"
+>
+  <h2
+    class="apptentive-message-center-profile__title apptentive-typography__body"
+  >
+    Profile Title
+  </h2>
+  <label
+    class="apptentive-message-center-profile__name"
+  >
+    <input
+      class="apptentive-textinput"
+      placeholder="Name placeholder"
+      type="text"
+    />
+  </label>
+  <label
+    class="apptentive-message-center-profile__email"
+  >
+    <input
+      class="apptentive-textinput"
+      placeholder="Email placeholder"
+      type="email"
+    />
+  </label>
+</div>
+`;
+
+exports[`renderProfile properly renders profile that is required 1`] = `
+<div
+  class="apptentive-message-center-profile"
+>
+  <h2
+    class="apptentive-message-center-profile__title apptentive-typography__body"
+  >
+    Profile Title
+  </h2>
+  <label
+    class="apptentive-message-center-profile__name"
+  >
+    <input
+      class="apptentive-textinput"
+      placeholder="Name placeholder"
+      type="text"
+    />
+  </label>
+  <label
+    class="apptentive-message-center-profile__email"
+  >
+    <input
+      class="apptentive-textinput"
+      placeholder="Email placeholder"
+      required=""
+      type="email"
+    />
+  </label>
+</div>
+`;

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderFooter properly renders footer 1`] = `
+<footer
+  class="apptentive-survey-footer"
+>
+  <a
+    class="apptentive-survey-footer__link"
+    href="https://test.com"
+    target="_blank"
+  >
+    Contact Us
+  </a>
+  <a
+    class="apptentive-survey-footer__link"
+    href="https://tandc.com"
+    target="_blank"
+  >
+    Terms & Conditions
+  </a>
+</footer>
+`;
+
+exports[`renderFooter properly renders footer with partial contact config 1`] = `
+<footer
+  class="apptentive-survey-footer"
+>
+  <a
+    class="apptentive-survey-footer__link"
+    href="https://tandc.com"
+    target="_blank"
+  >
+    Terms & Conditions
+  </a>
+</footer>
+`;
+
+exports[`renderFooter properly renders footer with partial terms and conditions config 1`] = `
+<footer
+  class="apptentive-survey-footer"
+>
+  <a
+    class="apptentive-survey-footer__link"
+    href="https://test.com"
+    target="_blank"
+  >
+    Contact Us
+  </a>
+</footer>
+`;
+
+exports[`renderFooter properly renders footer without contact config 1`] = `
+<footer
+  class="apptentive-survey-footer"
+>
+  <a
+    class="apptentive-survey-footer__link"
+    href="https://tandc.com"
+    target="_blank"
+  >
+    Terms & Conditions
+  </a>
+</footer>
+`;
+
+exports[`renderFooter properly renders footer without terms and conditions config 1`] = `
+<footer
+  class="apptentive-survey-footer"
+>
+  <a
+    class="apptentive-survey-footer__link"
+    href="https://test.com"
+    target="_blank"
+  >
+    Contact Us
+  </a>
+</footer>
+`;

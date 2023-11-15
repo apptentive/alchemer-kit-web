@@ -1,0 +1,127 @@
+@import '_config.scss';
+
+apptentive-love-dialog {
+  @extend %scroll-bars;
+  @extend %reset;
+
+  z-index: $high-zindex;
+
+  background: $gray-100;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-container;
+  color: $gray-600;
+  font: 14px $font-family;
+
+  display: flex;
+  flex-direction: column;
+
+  &.corner {
+    @extend %animate-in;
+
+    width: 258px;
+  }
+
+  &.center {
+    width: 340px;
+    max-height: 375px;
+  }
+
+  .apptentive-love-dialog-title {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px 20px 10px;
+    position: relative;
+
+    h1 {
+      font-family: $font-family;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: inherit;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      text-transform: inherit;
+    }
+  }
+
+  .apptentive-love-dialog-actions {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 10px 10px;
+
+    &.tall {
+      flex-direction: column;
+
+      .apptentive-love-dialog-action {
+        margin-right: 0px;
+        margin-bottom: 30px;
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    button.apptentive-love-dialog-action {
+      @extend %button;
+      background: $gray-200;
+      color: $blue-input;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 10px;
+      margin-bottom: 8px;
+      padding: 12px;
+      width: 100%;
+
+      &[disabled] {
+        background: $gray-500;
+      }
+    }
+  }
+
+  .close-love-dialog {
+    align-self: flex-start;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 900;
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    user-select: none;
+    z-index: 99;
+  }
+}
+
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-love-dialog,
+  apptentive-love-dialog.fixed,
+  apptentive-love-dialog.fixed.center,
+  apptentive-love-dialog.fixed.top-right,
+  apptentive-love-dialog.fixed.top-left,
+  apptentive-love-dialog.fixed.corner,
+  apptentive-love-dialog.fixed.bottom-right,
+  apptentive-love-dialog.fixed.bottom-left,
+  apptentive-love-dialog.fixed.top-center,
+  apptentive-love-dialog.fixed.bottom-center,
+  apptentive-love-dialog.fixed.left-center,
+  apptentive-love-dialog.fixed.right-center {
+    border-radius: 0;
+    border: 0;
+    bottom: 0;
+    box-shadow: none;
+    right: 0;
+    width: 100%;
+
+    animation-name: inherit;
+    top: inherit;
+    left: inherit;
+    transform: inherit;
+  }
+}

@@ -1,0 +1,8 @@
+.apptentive-intro {
+  padding-bottom: $spacing-8;
+  text-align: center;
+
+  &:empty {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderIntroductionSection properly renders error message container 1`] = `
+<div
+  class="apptentive-survey-intro"
+>
+  Introduction
+</div>
+`;

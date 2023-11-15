@@ -1,0 +1,93 @@
+%animate-in {
+  animation-name: apptentive_slide_up;
+  animation-duration: 0.35s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-delay: 0;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+%scroll-bars {
+  // No Firefox Support: https://bugzilla.mozilla.org/show_bug.cgi?id=77790
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  ::-webkit-scrollbar:vertical {
+    width: 9px;
+  }
+  ::-webkit-scrollbar:horizontal {
+    height: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    border: 2px solid $white; /* should match background, can't be transparent */
+    background-color: rgba($gray-400, 0.8);
+  }
+  ::-webkit-scrollbar-track {
+    background-color: $white;
+    border-radius: 9px;
+  }
+}
+
+%reset {
+  -webkit-overflow-scrolling: auto !important;
+  overflow-y: auto !important;
+  transform: translate3d(0, 0, 0);
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+    line-height: normal;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  a {
+    background: inherit;
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+}
+
+%button {
+  border-radius: $border-radius;
+  border: 0;
+  box-shadow: $box-shadow-element;
+  cursor: pointer;
+  display: block;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: normal;
+  height: auto;
+  letter-spacing: 0.5px;
+  line-height: normal;
+  outline: 0;
+  overflow: visible;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  user-select: none;
+  zoom: 1;
+
+  &:active {
+    letter-spacing: 2px;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}

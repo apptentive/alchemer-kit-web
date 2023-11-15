@@ -1,0 +1,21 @@
+{
+  "include": ["./src/**/*", "./__tests__/**/*.ts"],
+  "exclude": ["node_modules", "__tests__/**/*.js"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ES2020", "DOM"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2017",
+    "typeRoots": ["./src/types", "./node_modules/@types"]
+  }
+}

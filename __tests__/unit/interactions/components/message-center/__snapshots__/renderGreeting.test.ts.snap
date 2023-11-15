@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderGreeting properly renders blank 1`] = `
+<div
+  class="apptentive-message-center-greeting"
+>
+  <h2
+    class="apptentive-message-center-greeting__title apptentive-typography__header"
+  >
+    Title
+  </h2>
+  <p
+    class="apptentive-typography__body"
+  >
+    Body content
+  </p>
+</div>
+`;

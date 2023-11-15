@@ -1,0 +1,154 @@
+@import '_config.scss';
+
+apptentive-note {
+  z-index: $high-zindex;
+
+  &.corner {
+    .apptentive-note-content {
+      @extend %animate-in;
+    }
+
+    .apptentive-note-overlay {
+      display: none;
+    }
+  }
+
+  &.center {
+    .apptentive-note-content {
+      max-height: 375px;
+    }
+  }
+
+  .apptentive-note-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .apptentive-note-content {
+    @extend %scroll-bars;
+    @extend %reset;
+
+    width: 340px;
+    z-index: 2;
+    padding: 20px;
+    padding-bottom: 0;
+    max-height: 98vh;
+    max-height: calc(100vh - 120px);
+
+    background: $white;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 20px rgba($black, 0.3);
+    color: $gray-600;
+    font: 14px $font-family;
+
+    overscroll-behavior: contain;
+
+    .apptentive-note-title {
+      background: $white;
+      position: relative;
+      width: 100%;
+
+      h1 {
+        color: inherit;
+        font-family: $font-family;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: bold;
+        letter-spacing: inherit;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        text-transform: inherit;
+        width: 100%;
+      }
+    }
+
+    .apptentive-note-body {
+      color: inherit;
+      font-family: $font-family;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: normal;
+      margin-bottom: 10px;
+      padding: 4px 0px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .apptentive-note-actions {
+      background: inherit;
+      text-align: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 100%;
+      padding: 20px 0;
+      position: sticky;
+      bottom: 0px;
+
+      .apptentive-note-action {
+        margin-right: 30px;
+
+        h2.apptentive-note-label {
+          font-family: $font-family;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: bold;
+          cursor: pointer;
+          color: $blue-input;
+          margin: 0;
+        }
+        &:last-of-type {
+          margin-right: 0px;
+        }
+      }
+      &.tall {
+        flex-direction: column;
+
+        .apptentive-note-action {
+          margin-right: 0px;
+          margin-bottom: 30px;
+          &:last-of-type {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.apptentive-note-scroll-lock {
+  overflow: hidden;
+}
+
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-note .apptentive-note-content,
+  apptentive-note .apptentive-note-content.fixed,
+  apptentive-note .apptentive-note-content.fixed.center,
+  apptentive-note .apptentive-note-content.fixed.top-right,
+  apptentive-note .apptentive-note-content.fixed.top-left,
+  apptentive-note .apptentive-note-content.fixed.corner,
+  apptentive-note .apptentive-note-content.fixed.bottom-right,
+  apptentive-note .apptentive-note-content.fixed.bottom-left,
+  apptentive-note .apptentive-note-content.fixed.top-center,
+  apptentive-note .apptentive-note-content.fixed.bottom-center,
+  apptentive-note .apptentive-note-content.fixed.left-center,
+  apptentive-note .apptentive-note-content.fixed.right-center {
+    border-radius: 0;
+    bottom: 0;
+    overflow: scroll;
+    right: 0;
+    width: 100%;
+
+    animation-name: inherit;
+    top: inherit;
+    left: inherit;
+    transform: inherit;
+  }
+}

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderIntroduction properly renders introduction 1`] = `
+<div
+  class="apptentive-intro"
+>
+  <p
+    class="apptentive-typography__lead"
+  >
+    Introduction
+  </p>
+</div>
+`;
+
+exports[`renderIntroduction properly renders introduction with no text 1`] = `
+<div
+  class="apptentive-intro"
+/>
+`;

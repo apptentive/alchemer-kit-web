@@ -1,0 +1,76 @@
+// This is the height of the appbar minus the 10px gutter
+$appbarHeightMinusGutter: 34px;
+
+.fixed {
+  position: fixed;
+  transition: 200ms transform ease-in-out;
+
+  // Top
+  // ================================================================================
+  &.top-right {
+    top: 10px;
+    right: 10px;
+  }
+
+  &.top-left {
+    top: 10px;
+    left: 10px;
+  }
+
+  &.top-center {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // Center
+  // ================================================================================
+  &.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.left-center {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.right-center {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // Bottom
+  // ================================================================================
+  &.corner, // NOTE: Legacy Class
+  &.bottom-right {
+    bottom: 10px;
+    right: 10px;
+
+    &--minimized {
+      transform: translateY(calc(100% - #{$appbarHeightMinusGutter}));
+    }
+  }
+
+  &.bottom-left {
+    bottom: 10px;
+    left: 10px;
+
+    &--minimized {
+      transform: translateY(calc(100% - #{$appbarHeightMinusGutter}));
+    }
+  }
+
+  &.bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &--minimized {
+      transform: translateY(calc(100% - #{$appbarHeightMinusGutter}));
+    }
+  }
+}

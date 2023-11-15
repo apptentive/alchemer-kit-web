@@ -1,0 +1,112 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:jsdoc/recommended",
+    "plugin:node/recommended",
+    "plugin:optimize-regex/all",
+    "plugin:security/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "jsdoc",
+    "node",
+    "optimize-regex",
+    "security",
+    "xss",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "mocha": true,
+    "jest": true
+  },
+  "globals": {
+    "mocha": "readonly",
+    "expect": "writable",
+    "jest": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "__tests__/**/*.{js,ts}",
+          "server.js",
+          "*.config.{js,ts}"
+        ],
+        "optionalDependencies": true,
+        "peerDependencies": false
+      }
+    ],
+    "class-methods-use-this": 0,
+    "consistent-return": 0,
+    "import/no-cycle": 0,
+    "lines-between-class-members": 0,
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "no-empty-function": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-plusplus": 0,
+    "no-shadow": "off",
+    "no-underscore-dangle": 0,
+    "no-unused-vars": "off",
+    "node/no-missing-import": 0,
+    "node/no-unpublished-import": 0,
+    "node/no-unsupported-features/es-syntax": 0,
+    "object-curly-newline": 0,
+    "optimize-regex/optimize-regex": "warn",
+    "security/detect-non-literal-fs-filename": 0,
+    "security/detect-object-injection": 0,
+    "sonarjs/cognitive-complexity": 0,
+    "sonarjs/no-small-switch": 0,
+    "sonarjs/no-duplicate-string": 0,
+    "import/extensions": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      {
+        "allow": [
+          "arrowFunctions"
+        ]
+      }
+    ],
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "none"
+      }
+    ],
+    "prettier/prettier": [
+      "error"
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "jsdoc": {
+      "mode": "typescript"
+    }
+  }
+}

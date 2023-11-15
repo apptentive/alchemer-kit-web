@@ -1,0 +1,108 @@
+.apptentive-appbar {
+  align-items: center;
+  background: $red-apptentive;
+  color: $white;
+  display: flex;
+  flex-shrink: 0;
+  height: 44px;
+  justify-content: space-between;
+  position: relative;
+
+  &__icon {
+    background: transparent no-repeat left center;
+    background-size: contain;
+    height: 32px;
+    max-width: 80px;
+    width: 80px;
+  }
+
+  &__title {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    align-items: center;
+    color: $white;
+    display: flex;
+    font-family: $font-family;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: inherit;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: inherit;
+    width: 100%;
+
+    // TODO: Find a way to remove this positioning
+    // It needs to be here because of the icon that may or may not be present, but this is not ideal.
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+  }
+
+  &__action {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    height: $spacing-7;
+    position: relative;
+    user-select: none;
+    width: $spacing-7;
+    z-index: 1;
+
+    &--close {
+      padding: 6px;
+
+      &::before,
+      &::after {
+        background-color: #ffffff;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        width: 18px;
+      }
+
+      &::before {
+        transform: translate(1px, -1px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate(1px, -1px) rotate(-45deg);
+      }
+    }
+
+    &--minimize {
+      padding: 7px;
+
+      &::before,
+      &::after {
+        background-color: #ffffff;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        width: $spacing-4;
+        transform: translate(1px, -1px);
+        transition: 200ms transform ease-in-out;
+      }
+
+      &--active::after {
+        transform: translate(1px, -1px) rotate(90deg);
+      }
+    }
+  }
+}

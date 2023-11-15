@@ -1,0 +1,571 @@
+@import '_config.scss';
+
+apptentive-survey {
+  @extend %animate-in;
+  @extend %scroll-bars;
+  @extend %reset;
+
+  z-index: $high-zindex;
+
+  background: $gray-100;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-container;
+  font: 14px $font-family;
+  color: $gray-600;
+  display: flex;
+  flex-direction: column;
+  height: $interaction-height;
+  width: $interaction-width;
+
+  .apptentive-survey-intro {
+    font-family: $font-family;
+    font-size: 17px;
+    line-height: 1.18; // 20px
+    padding: 0 $spacing-5 $spacing-8;
+    text-align: center;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  form.apptentive-survey-questions {
+    height: 100%;
+
+    // Traditional linear surveys
+    &--linear,
+    // TODO: Needed for backwards compatibility. This can be deleted after September 19, 2022
+    &--list {
+      overflow-y: scroll;
+      padding: $spacing-4;
+
+      > .apptentive-interaction__confirm-wrapper {
+        &.opened {
+          width: 341px;
+          padding: 0 0 20px;
+        }
+      }
+    }
+
+    // Branching surveys
+    &--paged {
+      display: flex;
+      flex-direction: column;
+      overflow-y: hidden;
+
+      .apptentive-survey__question-wrapper {
+        align-items: center;
+        display: flex;
+        flex: 1 1 100%;
+        overflow: auto;
+        padding: $spacing-4;
+
+        question.apptentive-survey-question {
+          margin: auto 0;
+          padding-bottom: 0;
+          width: 100%;
+        }
+      }
+
+      .apptentive-survey__actions-wrapper {
+        border-top: 1px solid $gray-300;
+        flex-shrink: 0;
+        padding: $spacing-4;
+
+        .apptentive-survey__button {
+          margin-bottom: $spacing-1;
+        }
+
+        apptentive-errors {
+          margin-bottom: $spacing-1;
+        }
+
+        .apptentive-progress__wrapper {
+          padding-top: $spacing-3;
+        }
+      }
+    }
+
+    fieldset {
+      display: block;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      -webkit-padding-before: 0;
+      -webkit-padding-start: 0;
+      -webkit-padding-end: 0;
+      -webkit-padding-after: 0;
+      border: 0;
+      margin: 0;
+      padding: 0;
+
+      legend {
+        display: none;
+      }
+    }
+
+    apptentive-errors {
+      display: block;
+      color: $red-apptentive;
+      cursor: pointer;
+      font-size: 12px;
+      text-align: center;
+      padding: $spacing-1;
+      white-space: pre-wrap;
+
+      &:empty {
+        display: none;
+      }
+    }
+
+    .apptentive-survey-question {
+      background-color: transparent;
+      border-radius: inherit;
+      border-bottom: 1px solid $gray-300;
+      display: block;
+      font-size: inherit;
+      margin-bottom: $spacing-6;
+      max-width: inherit;
+      min-width: inherit;
+      padding-bottom: $spacing-6;
+      position: inherit;
+      text-align: inherit;
+      // vertical-align: inherit;
+      width: inherit;
+
+      &.multiselect {
+        answer-choices answer-choice {
+          align-items: center;
+          display: flex;
+          margin-bottom: 0;
+          margin-top: 0;
+
+          input[type='checkbox'] {
+            appearance: none;
+            background-color: white;
+            border: 1px solid $gray-500;
+            border-radius: 2px;
+            cursor: pointer;
+            height: 16px;
+            outline: 0;
+            position: relative;
+            transition: background 100ms ease-in-out;
+            visibility: visible;
+            width: 16px;
+
+            &::before {
+              border-color: $white;
+              border-radius: 1px;
+              border-style: solid;
+              border-width: 0 2px 2px 0;
+              box-sizing: border-box;
+              content: '';
+              display: block;
+              height: 10px;
+              left: 4px;
+              opacity: 0;
+              position: absolute;
+              transform: rotate(45deg);
+              top: 1px;
+              width: 6px;
+            }
+
+            &:checked {
+              color: $white;
+              background: $blue-input;
+              border-color: $blue-input;
+
+              &::before {
+                opacity: 1;
+              }
+
+              ~ label::before {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+              }
+            }
+
+            &:focus {
+              border-color: $blue-input;
+              box-shadow: 0 0 0 2px transparentize($blue-input, 0.7);
+            }
+          }
+
+          input.other-input {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &.multichoice {
+        answer-choices answer-choice {
+          input[type='radio'] {
+            appearance: none;
+            margin: 0;
+            margin-right: $spacing-3;
+
+            align-items: center;
+            border: 1px solid $gray-500;
+            border-radius: 50%;
+            color: $gray-500;
+            display: flex;
+            font: inherit;
+            height: 16px;
+            justify-content: center;
+            visibility: visible;
+            width: 16px;
+
+            &::before {
+              background-color: $blue-input;
+              border-radius: 50%;
+              content: '';
+              height: 8px;
+              transform: scale(0);
+              transition: 100ms transform ease-in-out;
+              width: 8px;
+            }
+
+            &:checked {
+              border-color: $blue-input;
+              border-width: 2px;
+            }
+
+            &:checked::before {
+              transform: scale(1);
+            }
+
+            &:focus {
+              border-color: $blue-input;
+              box-shadow: 0 0 0 2px transparentize($blue-input, 0.7);
+            }
+          }
+        }
+      }
+
+      &.singleline {
+        answer-choices {
+          padding-top: $spacing-2;
+
+          answer-choice {
+            background: none;
+            border: 0;
+            box-shadow: none;
+            display: flex;
+            padding: 0;
+
+            input,
+            textarea {
+              background: $white;
+              border: 1px solid $gray-500;
+              border-radius: $border-radius;
+              color: $gray-600;
+              font-size: 14px;
+              line-height: 1;
+              margin: 0;
+              padding: 10px 12px;
+              text-align: left;
+              transition: 0.15s background-color, 0.15s border-color, 0.15s box-shadow;
+              width: 100%;
+              z-index: 1;
+            }
+
+            input:focus,
+            textarea:focus {
+              box-shadow: 0 0 4px rgba($blue-interact, 0.5), 0 2px 0 $gray-100 inset;
+              border-color: $blue-interact;
+              outline: 0;
+            }
+          }
+        }
+      }
+
+      &.nps,
+      &.range {
+        answer-choice-container {
+          background: $white;
+          display: flex;
+          flex-direction: column;
+          padding-top: $spacing-2;
+
+          answer-choices {
+            display: flex;
+
+            answer-choice {
+              box-shadow: none;
+              display: flex;
+              margin-right: -1px; // Add a negative margin to overlay the borders
+              padding: 0;
+              width: 100%;
+
+              &:first-child label {
+                border-radius: 4px 0 0 4px;
+              }
+
+              &:last-child label {
+                border-radius: 0 4px 4px 0;
+              }
+
+              label {
+                border: 1px solid $gray-500;
+                background-color: $white !important;
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+                transition: background-color 100ms, color 100ms;
+                user-select: none;
+              }
+
+              input {
+                display: none;
+              }
+
+              input:checked + label {
+                // TODO: Find a way to remove this important
+                background-color: $blue-input !important;
+                border-color: $blue-input;
+                color: $white;
+                z-index: 1; // Add 1 to the z-index to make sure the border color changes appears on all sides
+              }
+            }
+          }
+
+          answer-choice-labels {
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            font-size: 14px;
+            justify-content: space-between;
+            line-height: 12px;
+            padding-top: $spacing-2;
+          }
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      h2.apptentive-survey-question-value {
+        color: $gray-600;
+        font-family: $font-family;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: inherit;
+        line-height: 1.375; // 22px
+        margin: 0;
+        margin-bottom: $spacing-3;
+        text-transform: none;
+      }
+
+      question-instructions {
+        color: $gray-600;
+        display: block;
+        font-size: 14px;
+        line-height: 0.857; // 12px;
+        margin-bottom: $spacing-3;
+      }
+
+      answer-choices {
+        display: block;
+
+        answer-choice {
+          display: flex;
+          align-items: center;
+          list-style: none;
+
+          cursor: pointer;
+          padding: 0;
+          text-align: left;
+
+          input,
+          textarea {
+            align-self: center;
+            background: $white;
+            border-radius: inherit;
+            cursor: pointer;
+            display: inline-block;
+            flex-shrink: 0;
+            font-family: $font-family;
+            font-size: inherit;
+            font-style: normal;
+            height: auto;
+            letter-spacing: inherit;
+            margin: 0;
+            margin-right: $spacing-3;
+            opacity: 1;
+            outline: 0;
+            padding: 0;
+            vertical-align: baseline;
+            width: auto;
+            z-index: 1;
+
+            position: inherit;
+            left: inherit;
+            right: inherit;
+            top: inherit;
+            bottom: inherit;
+          }
+
+          input.other-input {
+            border-radius: $border-radius;
+            border: 1px solid $gray-500;
+            color: $gray-600;
+            cursor: text;
+            flex-grow: 1;
+            font-size: 14px;
+            line-height: $spacing-3;
+            margin: 2px 0;
+            padding: $spacing-1 $spacing-2;
+
+            &:focus {
+              box-shadow: 0 0 4px rgba($blue-interact, 0.5), 0 2px 0 $gray-100 inset;
+              border-color: $blue-interact;
+              outline: 0;
+            }
+          }
+
+          label {
+            background: none !important;
+            clear: inherit;
+            cursor: pointer;
+            display: inline-block;
+            font-family: $font-family;
+            font-size: 14px;
+            font-weight: normal;
+            height: auto;
+            line-height: normal;
+            margin: 0;
+            max-width: initial;
+            padding: $spacing-2 0;
+            position: inherit;
+            text-align: left;
+            vertical-align: top;
+            flex: 1;
+
+            &:before,
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+
+      invalid-reason {
+        display: block;
+        padding: 8px 0;
+        color: $red-apptentive;
+
+        &:empty {
+          display: none;
+        }
+      }
+    }
+  }
+
+  button.apptentive-survey__button,
+  button.submit {
+    @extend %button;
+    background: $blue-input;
+    border-radius: 32px;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 auto;
+    padding: $spacing-2 $spacing-7;
+    text-transform: uppercase;
+    transition: 150ms all linear;
+
+    &:hover {
+      background-color: $blue-interact;
+    }
+  }
+
+  .apptentive-disclaimer {
+    text-align: center;
+    padding-top: 16px;
+  }
+
+  // Moved to _footer.scss
+  .apptentive-survey-footer {
+    align-items: center;
+    background-color: $red-apptentive;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    min-height: $spacing-6;
+    z-index: 1;
+
+    .apptentive-survey-contact-us,
+    // TODO: Needed for backwards compatibility. This can be deleted after September 19, 2022
+    &__link {
+      color: $white;
+      font-size: 14px;
+      padding: $spacing-1 $spacing-2;
+      text-decoration: underline;
+    }
+  }
+}
+
+// iOS will zoom on focus, unless you use 16px on the input.
+// https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/
+@supports (-webkit-touch-callout: none) {
+  apptentive-survey {
+    select,
+    select:focus,
+    textarea,
+    textarea:focus,
+    input,
+    input:focus {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-survey,
+  apptentive-survey.fixed,
+  apptentive-survey.fixed.center,
+  apptentive-survey.fixed.top-right,
+  apptentive-survey.fixed.top-left,
+  apptentive-survey.fixed.corner,
+  apptentive-survey.fixed.bottom-right,
+  apptentive-survey.fixed.bottom-left,
+  apptentive-survey.fixed.top-center,
+  apptentive-survey.fixed.bottom-center,
+  apptentive-survey.fixed.left-center,
+  apptentive-survey.fixed.right-center {
+    border: 0;
+    border-radius: 0;
+    bottom: 0;
+    padding: 0;
+    box-shadow: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    animation-name: inherit;
+    transform: inherit;
+
+    form.apptentive-survey-questions {
+      flex-grow: 1;
+    }
+  }
+
+  apptentive-survey.fixed.corner.corner--minimized,
+  apptentive-survey.fixed.bottom-right.bottom-right--minimized,
+  apptentive-survey.fixed.bottom-left.bottom-left--minimized,
+  apptentive-survey.fixed.bottom-center.bottom-center--minimized {
+    transform: translateY(calc(100% - 44px));
+  }
+}

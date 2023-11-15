@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderSubmitButton properly renders submit button 1`] = `
+<div
+  class="apptentive-message-center__actions"
+>
+  <button
+    class="apptentive-button--primary"
+    type="button"
+  >
+    Click Me!
+  </button>
+  <apptentive-errors
+    class="apptentive-errors"
+    style="display: none;"
+  />
+</div>
+`;

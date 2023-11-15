@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderActions properly renders actions 1`] = `
+<div
+  class="apptentive-love-dialog-actions"
+>
+  <button
+    class="apptentive-love-dialog-action apptentive-love-dialog-no"
+  >
+    Hate it!
+  </button>
+  <button
+    class="apptentive-love-dialog-action apptentive-love-dialog-yes"
+  >
+    Love it!
+  </button>
+</div>
+`;
+
+exports[`renderActions properly renders without any options 1`] = `
+<div
+  class="apptentive-love-dialog-actions"
+>
+  <button
+    class="apptentive-love-dialog-action apptentive-love-dialog-no"
+  >
+    No
+  </button>
+  <button
+    class="apptentive-love-dialog-action apptentive-love-dialog-yes"
+  >
+    Yes
+  </button>
+</div>
+`;

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderErrorMessage properly renders error message container 1`] = `
+<apptentive-errors
+  class="apptentive-errors"
+  style="display: none;"
+/>
+`;

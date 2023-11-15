@@ -1,0 +1,53 @@
+.apptentive-typography__header {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $gray-600;
+  font-family: $font-family;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.apptentive-typography__lead {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $gray-600;
+  font-family: $font-family;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+}
+
+.apptentive-typography__body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $gray-600;
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.apptentive-typography__description {
+  color: $gray-600;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+
+  &--tall {
+    line-height: 1.15;
+  }
+}
+
+.apptentive-typography__alert {
+  color: $red-alert;
+  font-family: $font-family;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 13px;
+}

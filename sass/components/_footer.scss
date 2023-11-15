@@ -1,0 +1,18 @@
+.apptentive-footer {
+  align-items: center;
+  background-color: $red-apptentive;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  min-height: $spacing-6;
+  z-index: 1;
+
+  &__link {
+    color: $white;
+    font-size: 14px;
+    padding: $spacing-1 $spacing-2;
+    text-decoration: underline;
+  }
+}

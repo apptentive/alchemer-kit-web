@@ -1,0 +1,15 @@
+{
+  "comments": false,
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "auto",
+        "debug": true,
+        "useBuiltIns": false, // "usage",
+        "corejs": "3.25"
+      }
+    ],
+    "@babel/typescript"
+  ]
+}

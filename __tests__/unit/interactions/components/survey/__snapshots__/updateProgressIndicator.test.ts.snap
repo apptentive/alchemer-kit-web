@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateProgressIndicator properly updates indeterminate progress indicator 1`] = `
+<body>
+  <div
+    class="apptentive-progress__wrapper"
+  >
+    <progress
+      class="apptentive-progress-bar"
+      max="100"
+      value="25"
+    />
+  </div>
+</body>
+`;
+
+exports[`updateProgressIndicator properly updates step progress indicator 1`] = `
+<body>
+  <div
+    class="apptentive-progress__wrapper"
+  >
+    <ul
+      class="apptentive-step-indicator"
+    >
+      <li
+        class="apptentive-step-indicator__item apptentive-step-indicator__item--complete"
+      />
+      <li
+        class="apptentive-step-indicator__item apptentive-step-indicator__item--complete"
+      />
+      <li
+        class="apptentive-step-indicator__item apptentive-step-indicator__item--complete"
+      />
+      <li
+        class="apptentive-step-indicator__item apptentive-step-indicator__item--current"
+      />
+      <li
+        class="apptentive-step-indicator__item"
+      />
+    </ul>
+  </div>
+</body>
+`;

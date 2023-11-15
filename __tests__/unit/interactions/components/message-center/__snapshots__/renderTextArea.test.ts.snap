@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderTextArea properly renders textarea 1`] = `
+<div
+  class="apptentive-message-center-feedback"
+>
+  <textarea
+    class="apptentive-textinput"
+    name="response"
+    placeholder="Hint text"
+    required=""
+    rows="4"
+  />
+</div>
+`;

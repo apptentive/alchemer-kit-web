@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/standard/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/standard/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/standard/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/public/standard/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/public/standard/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="/public/standard/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/public/standard/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta charset="utf-8" />
+    <meta name="language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Playwright Testing App</title>
+  </head>
+  <body>
+    <div>
+      <p>Playwright Automated Testing Page</p>
+    </div>
+    <div id="domNode"></div>
+    <!-- V1 Script -->
+    <script>
+      (function () {
+        var a = (window.ApptentiveSDK = window.ApptentiveSDK || []);
+        if (!a.version && !a.loaded) {
+          a.loaded = !0;
+          a.methods =
+            'buildDevice createConversation createMessage engage getInteractions identifyPerson setPageName showMessageCenter showInteraction getSegments setOption'.split(
+              ' '
+            );
+          a.factory = function (c) {
+            return function () {
+              for (var b = arguments.length, d = Array(b), e = 0; e < b; e++) d[e] = arguments[e];
+              b = Array.prototype.slice.call(d);
+              b.unshift(c);
+              a.push(b);
+              return a;
+            };
+          };
+          for (var c = 0; c < a.methods.length; c++) {
+            var d = a.methods[c];
+            a[d] = a.factory(d);
+          }
+          a.LOADER_VERSION = '1.0.0';
+        }
+      })();
+    </script>
+    <script src="http://localhost:3001/fixtures/v1/apps/playwright/websdk"></script>
+  </body>
+</html>

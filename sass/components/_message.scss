@@ -1,0 +1,45 @@
+.apptentive-message {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  padding: $spacing-4;
+
+  .apptentive-message__content-wrapper {
+    flex: 1 1 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 8px 0;
+    width: 100%;
+  }
+
+  .apptentive-message__content {
+    align-items: center;
+    color: $gray-600;
+    display: flex;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 1.375; // 22px
+    margin: 0;
+    min-height: 100%;
+    overflow-wrap: anywhere;
+    padding: 0 8px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .apptentive-message__actions {
+    flex-shrink: 0;
+    width: 100%;
+
+    // MAGIC NUMBER: Button bottom margin + height of progress bar
+    // This ensures that the start button is the same height as the next button on following screens
+    &--tall {
+      margin-bottom: 22px;
+    }
+  }
+}

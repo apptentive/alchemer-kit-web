@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderDisclaimerText properly renders long disclaimer text 1`] = `
+<div
+  class="apptentive-disclaimer"
+>
+  <p
+    class="apptentive-disclaimer__text apptentive-typography__description apptentive-typography__description--tall"
+    style="font-size: 12px;"
+  >
+    Long disclaimer text that is more than 160 characters and really should not be this long but sometimes it is unavoidable so we have to handle it gracefully and decrease the font size
+  </p>
+</div>
+`;
+
+exports[`renderDisclaimerText properly renders short disclaimer text 1`] = `
+<div
+  class="apptentive-disclaimer"
+>
+  <p
+    class="apptentive-disclaimer__text apptentive-typography__description apptentive-typography__description--tall"
+  >
+    Short Disclaimer
+  </p>
+</div>
+`;

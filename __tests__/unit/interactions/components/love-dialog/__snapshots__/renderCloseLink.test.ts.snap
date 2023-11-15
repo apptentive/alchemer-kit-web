@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderCloseLink properly renders close link 1`] = `
+<div
+  class="close-love-dialog"
+>
+  ✕
+</div>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderAppbar properly renders appbar 1`] = `
+<div
+  class="apptentive-appbar"
+>
+  <div
+    class="apptentive-appbar__icon"
+  />
+  <h1
+    class="apptentive-appbar__title"
+    tabindex="0"
+  >
+    Title
+  </h1>
+  <div
+    class="apptentive-appbar__actions"
+  >
+    <div
+      aria-label="minimize"
+      class="apptentive-appbar__action apptentive-appbar__action--minimize"
+      id="title__action--minimize"
+      role="button"
+      style="width: 32px; height: 32px;"
+      tabindex="0"
+    />
+    <div
+      aria-label="close"
+      class="apptentive-appbar__action apptentive-appbar__action--close"
+      id="title__action--close"
+      role="button"
+      style="width: 32px; height: 32px;"
+      tabindex="0"
+    />
+  </div>
+</div>
+`;

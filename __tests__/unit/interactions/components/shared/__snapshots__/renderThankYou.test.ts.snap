@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderThankYou properly renders short thank you screen 1`] = `
+<apptentive-survey-thank-you
+  class="apptentive-message"
+  style="display: none;"
+>
+  <div
+    class="apptentive-message__content-wrapper"
+  >
+    <p
+      class="apptentive-message__content"
+    >
+      Thank you for your feedback!
+    </p>
+  </div>
+  <div
+    class="apptentive-message__actions"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Close Survey"
+    >
+      Close Survey
+    </button>
+  </div>
+</apptentive-survey-thank-you>
+`;
+
+exports[`renderThankYou properly renders tall thank you screen 1`] = `
+<apptentive-survey-thank-you
+  class="apptentive-message"
+  style="display: none;"
+>
+  <div
+    class="apptentive-message__content-wrapper"
+  >
+    <p
+      class="apptentive-message__content"
+    >
+      Thank you for your feedback!
+    </p>
+  </div>
+  <div
+    class="apptentive-message__actions apptentive-message__actions--tall"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Close Survey"
+    >
+      Close Survey
+    </button>
+  </div>
+</apptentive-survey-thank-you>
+`;
+
+exports[`renderThankYou properly renders thank you with defaults 1`] = `
+<apptentive-survey-thank-you
+  class="apptentive-message"
+  style="display: none;"
+>
+  <div
+    class="apptentive-message__content-wrapper"
+  >
+    <p
+      class="apptentive-message__content"
+    >
+      Thank you!
+    </p>
+  </div>
+  <div
+    class="apptentive-message__actions"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Close"
+    >
+      Close
+    </button>
+  </div>
+</apptentive-survey-thank-you>
+`;

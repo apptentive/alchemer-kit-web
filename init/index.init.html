@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="language" content="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mocha</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" media="all" href="/spec/mocha.css">
+</head>
+<body>
+<div id="mocha"></div>
+<div id="messages"></div>
+<div id="fixtures"></div>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/dirty-chai/lib/dirty-chai.js"></script>
+<script src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+<script src="../lib/init.js"></script>
+<script>
+if (typeof initMochaPhantomJS === 'function') {
+  initMochaPhantomJS()
+}
+</script>
+<script>
+var expect = chai.expect,
+    should = chai.should(),
+    assert = chai.assert;
+
+chai.config.includeStack = true;
+chai.config.showDiff = true;
+
+mocha.setup('bdd');
+</script>
+<script src="/spec/init_spec.js"></script>
+<script>
+mocha.run();
+</script>
+</body>
+</html>

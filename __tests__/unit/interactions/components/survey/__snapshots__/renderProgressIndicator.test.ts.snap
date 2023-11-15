@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderProgressIndicator properly handles a question count of 0 1`] = `
+<div
+  class="apptentive-progress__wrapper"
+>
+  <ul
+    class="apptentive-step-indicator"
+  />
+</div>
+`;
+
+exports[`renderProgressIndicator properly renders indeterminate progress indicator 1`] = `
+<div
+  class="apptentive-progress__wrapper"
+>
+  <progress
+    class="apptentive-progress-bar"
+    max="100"
+    value="0"
+  />
+</div>
+`;
+
+exports[`renderProgressIndicator properly renders step progress indicator 1`] = `
+<div
+  class="apptentive-progress__wrapper"
+>
+  <ul
+    class="apptentive-step-indicator"
+  >
+    <li
+      class="apptentive-step-indicator__item apptentive-step-indicator__item--current"
+    />
+    <li
+      class="apptentive-step-indicator__item"
+    />
+    <li
+      class="apptentive-step-indicator__item"
+    />
+    <li
+      class="apptentive-step-indicator__item"
+    />
+    <li
+      class="apptentive-step-indicator__item"
+    />
+  </ul>
+</div>
+`;

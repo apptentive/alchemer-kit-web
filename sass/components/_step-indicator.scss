@@ -1,0 +1,29 @@
+.apptentive-step-indicator {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  height: 6px;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    border: 1px solid $gray-400;
+    border-radius: 20px;
+    margin: 0 $spacing-1;
+    max-width: 44px;
+    transition: 200ms all ease-in-out;
+    width: 100%;
+
+    &--current {
+      background-color: $blue-input;
+      border-color: $blue-input;
+      border-width: 3px 2px;
+    }
+
+    &--complete {
+      background-color: $gray-600;
+      border-color: $gray-600;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import '_config.scss';
+
+apptentive-message-center {
+  @extend %animate-in;
+  @extend %scroll-bars;
+  @extend %reset;
+
+  z-index: $high-zindex;
+
+  background: $gray-100;
+  box-shadow: $box-shadow-container;
+  border-radius: $border-radius;
+  font: 14px $font-family;
+  color: $gray-600;
+  display: flex;
+  flex-direction: column;
+  height: $interaction-height;
+  width: $interaction-width;
+
+  .apptentive-message-center__content {
+    flex: 1 1 100%;
+    overflow-y: auto;
+    padding: $spacing-4;
+  }
+
+  .apptentive-message-center-greeting {
+    padding-bottom: $spacing-4;
+
+    &__title {
+      padding-bottom: $spacing-4;
+    }
+  }
+
+  .apptentive-message-center-feedback {
+    padding-bottom: $spacing-8;
+  }
+
+  .apptentive-message-center-profile {
+    padding-bottom: $spacing-4;
+
+    &__title {
+      padding-bottom: $spacing-4;
+    }
+
+    &__name {
+      display: block;
+      padding-bottom: $spacing-4;
+    }
+
+    &__email {
+      display: block;
+    }
+  }
+
+  .apptentive-message-center__actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  apptentive-errors {
+    display: block;
+    color: $red-apptentive;
+    font-size: 12px;
+    text-align: center;
+    white-space: pre-wrap;
+  }
+}
+
+// iOS will zoom on focus, unless you use 16px on the input.
+// https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/
+@supports (-webkit-touch-callout: none) {
+  apptentive-message-center {
+    select,
+    select:focus,
+    textarea,
+    textarea:focus,
+    input,
+    input:focus {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-message-center,
+  apptentive-message-center.fixed,
+  apptentive-message-center.fixed.center,
+  apptentive-message-center.fixed.top-right,
+  apptentive-message-center.fixed.top-left,
+  apptentive-message-center.fixed.corner,
+  apptentive-message-center.fixed.bottom-right,
+  apptentive-message-center.fixed.bottom-left,
+  apptentive-message-center.fixed.top-center,
+  apptentive-message-center.fixed.bottom-center,
+  apptentive-message-center.fixed.left-center,
+  apptentive-message-center.fixed.right-center {
+    border: 0;
+    border-radius: 0;
+    bottom: 0;
+    padding: 0;
+    box-shadow: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    animation-name: inherit;
+    transform: inherit;
+  }
+
+  apptentive-message-center.fixed.corner.corner--minimized,
+  apptentive-message-center.fixed.bottom-right.bottom-right--minimized,
+  apptentive-message-center.fixed.bottom-left.bottom-left--minimized,
+  apptentive-message-center.fixed.bottom-center.bottom-center--minimized {
+    transform: translateY(calc(100% - 44px));
+  }
+}

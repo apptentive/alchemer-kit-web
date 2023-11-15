@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderIntroductionPage properly renders the introduction 1`] = `
+<apptentive-survey-introduction
+  class="apptentive-message"
+>
+  <div
+    class="apptentive-message__content-wrapper"
+  >
+    <p
+      class="apptentive-message__content"
+    />
+  </div>
+  <div
+    class="apptentive-message__actions"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Button Text"
+      type="button"
+    >
+      Button Text
+    </button>
+    <div
+      class="apptentive-disclaimer"
+    >
+      <p
+        class="apptentive-disclaimer__text apptentive-typography__description apptentive-typography__description--tall"
+      >
+        Short Disclaimer
+      </p>
+    </div>
+  </div>
+</apptentive-survey-introduction>
+`;
+
+exports[`renderIntroductionPage properly renders the introduction without button text 1`] = `
+<apptentive-survey-introduction
+  class="apptentive-message"
+>
+  <div
+    class="apptentive-message__content-wrapper"
+  >
+    <p
+      class="apptentive-message__content"
+    />
+  </div>
+  <div
+    class="apptentive-message__actions"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Start Survey"
+      type="button"
+    >
+      Start Survey
+    </button>
+    <div
+      class="apptentive-disclaimer"
+    >
+      <p
+        class="apptentive-disclaimer__text apptentive-typography__description apptentive-typography__description--tall"
+      >
+        Short Disclaimer
+      </p>
+    </div>
+  </div>
+</apptentive-survey-introduction>
+`;
+
+exports[`renderIntroductionPage properly renders the introduction without disclaimer text 1`] = `
+<apptentive-survey-introduction
+  class="apptentive-message"
+>
+  <div
+    class="apptentive-message__content-wrapper"
+  >
+    <p
+      class="apptentive-message__content"
+    />
+  </div>
+  <div
+    class="apptentive-message__actions apptentive-message__actions--tall"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Button Text"
+      type="button"
+    >
+      Button Text
+    </button>
+  </div>
+</apptentive-survey-introduction>
+`;
+
+exports[`renderIntroductionPage properly renders the introduction without intro text 1`] = `
+<apptentive-survey-introduction
+  class="apptentive-message"
+>
+  <div
+    class="apptentive-message__actions"
+  >
+    <button
+      class="apptentive-button--primary"
+      title="Button Text"
+      type="button"
+    >
+      Button Text
+    </button>
+    <div
+      class="apptentive-disclaimer"
+    >
+      <p
+        class="apptentive-disclaimer__text apptentive-typography__description apptentive-typography__description--tall"
+      >
+        Short Disclaimer
+      </p>
+    </div>
+  </div>
+</apptentive-survey-introduction>
+`;

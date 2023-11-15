@@ -1,0 +1,61 @@
+.apptentive-interaction {
+  &__blocked {
+    opacity: 0.5;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 86px;
+    width: 92%;
+    height: 364px;
+    z-index: 2;
+    cursor: not-allowed;
+  }
+
+  &__confirm-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    font-size: 12px;
+    transition: 300ms ease-out;
+    background: $gray-100;
+
+    &.closed {
+      height: 0;
+      opacity: 0;
+    }
+
+    &.opened {
+      height: 42px;
+      padding: 12px 8px;
+      box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.14);
+    }
+
+    > span {
+      white-space: nowrap;
+    }
+
+    > button {
+      border: 0;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    &__ok {
+      border-radius: 12px;
+      background: $success-green;
+      color: $white;
+      height: 21px;
+      width: 42px;
+      margin: 0 4px 0 8px;
+    }
+
+    &__cancel {
+      color: $red-alert;
+      padding: 0 2px;
+      background: inherit;
+    }
+  }
+}

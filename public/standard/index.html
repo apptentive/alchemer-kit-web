@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/standard/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/standard/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/standard/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/public/standard/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/public/standard/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="/public/standard/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/public/standard/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta charset="utf-8" />
+    <meta name="language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebSDK Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" media="screen" charset="utf-8" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="page-wrapper__header">
+        <div class="header__title">WebSDK Tester</div>
+      </header>
+      <main class="page-wrapper__actions">
+        <div id="actions__events" class="actions__column">
+          <div class="actions__header">Events</div>
+        </div>
+        <div id="actions__troubleshooting" class="actions__column">
+          <div class="actions__header">Troubleshooting</div>
+          <button id="clear-local-storage" class="actions__button">
+            <div class="actions__button-text">Clear Local Storage</div>
+            <div class="actions__button-description">Clears local storage</div>
+          </button>
+          <button id="clear-session-storage" class="actions__button">
+            <div class="actions__button-text">Clear Session Storage</div>
+            <div class="actions__button-description">Clears session storage</div>
+          </button>
+          <button id="clear-storage" class="actions__button">
+            <div class="actions__button-text">Clear All Storage</div>
+            <div class="actions__button-description">Clears local storage and session storage</div>
+          </button>
+          <button id="reset-interactions" class="actions__button">
+            <div class="actions__button-text">Reset Interactions</div>
+            <div class="actions__button-description">Reset event and interaction counts</div>
+          </button>
+          <button id="identify-person" class="actions__button">
+            <div class="actions__button-text">Add Person Data</div>
+            <div class="actions__button-description">Adds person data to the SDK</div>
+          </button>
+          <div class="actions__header">Configuration</div>
+          <div id="configuration-listing" class="configuration__wrapper"></div>
+        </div>
+      </main>
+      <footer class="page-wrapper__footer">
+        <button id="language-en" class="actions__link" type="button">en</button>
+        <button id="language-fr" class="actions__link" type="button">fr</button>
+        <button id="update-language" class="actions__link" type="button">zh-HK</button>
+      </footer>
+    </div>
+    <div id="domNode"></div>
+    <!-- V1 Script -->
+    <script>
+      (function () {
+        var a = (window.ApptentiveSDK = window.ApptentiveSDK || []);
+        if (!a.version && !a.loaded) {
+          a.loaded = !0;
+          a.methods =
+            'buildDevice createConversation createMessage engage getInteractions identifyPerson setPageName showMessageCenter showInteraction getSegments setOption'.split(
+              ' '
+            );
+          a.factory = function (c) {
+            return function () {
+              for (var b = arguments.length, d = Array(b), e = 0; e < b; e++) d[e] = arguments[e];
+              b = Array.prototype.slice.call(d);
+              b.unshift(c);
+              a.push(b);
+              return a;
+            };
+          };
+          for (var c = 0; c < a.methods.length; c++) {
+            var d = a.methods[c];
+            a[d] = a.factory(d);
+          }
+          a.LOADER_VERSION = '1.0.0';
+        }
+      })();
+    </script>
+    <script src="https://localhost:3002/fixtures/v1/apps/tester/websdk"></script>
+
+    <script src="../assets/js/index.js"></script>
+  </body>
+</html>

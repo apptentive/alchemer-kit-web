@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.coveralls.yml
+coverage/
+instrumented/
+build-coverage/*.js
+npm-debug.log
+docs/*
+.nyc_output/
+.mocha-puppeteer/
+.cache
+.vscode/

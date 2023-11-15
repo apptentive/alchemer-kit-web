@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderTitle properly renders title 1`] = `
+<div
+  class="apptentive-love-dialog-title"
+>
+  <h1>
+    Title
+  </h1>
+</div>
+`;
+
+exports[`renderTitle properly renders title when no text is passed in 1`] = `
+<div
+  class="apptentive-love-dialog-title"
+>
+  <h1 />
+</div>
+`;

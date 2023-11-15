@@ -1,0 +1,21 @@
+.apptentive-button--primary {
+  @extend %button;
+  background: $blue-input;
+  border-radius: 32px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
+  padding: $spacing-2 $spacing-7;
+  text-transform: uppercase;
+  transition: 150ms all linear;
+
+  &:hover:not(:disabled) {
+    background-color: $blue-interact;
+  }
+
+  &:focus:not(:disabled) {
+    outline: none;
+  }
+}
