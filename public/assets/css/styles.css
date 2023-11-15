@@ -1,0 +1,1793 @@
+input[type='radio'] {
+  visibility: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, rgba(27, 39, 53, 0.8) 0%, rgba(9, 10, 15, 0.8) 100%),
+    url('https://images.unsplash.com/photo-1508233620467-f79f1e317a05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80');
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  height: 100vh;
+  margin: 0;
+  width: 100vw;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.page-wrapper__header {
+  -webkit-backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
+  backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
+  border-bottom: 1px solid #333333;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 16px;
+}
+
+.header__title {
+  color: #c5c5c5;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.page-wrapper__actions {
+  align-items: flex-start;
+  display: flex;
+  flex: 2 2 100%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  padding: 1.5em 0;
+}
+
+.page-wrapper__footer {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  width: 100%;
+}
+
+.actions__column {
+  height: 100%;
+  overflow: auto;
+  padding: 0 16px;
+  width: 50%;
+}
+.actions__column:not(:last-child) {
+  border-right: 1px solid #fafafa;
+}
+
+.actions__header {
+  border-bottom: 1px solid #c5c5c5;
+  color: #c5c5c5;
+  font-size: 14px;
+  margin: 2em 0 1em;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+.actions__header:first-child {
+  margin-top: 0;
+}
+
+.actions__button {
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 0 1em;
+  overflow: hidden;
+  padding: 8px 12px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-align: left;
+  transition: all 200ms linear;
+  white-space: nowrap;
+  width: 100%;
+}
+.actions__button:hover {
+  border-color: #fafafa;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.actions__button-text {
+  color: #fafafa;
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 4px;
+}
+.actions__button-description {
+  color: #b9b9b9;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.actions__link {
+  border: none;
+  background-color: transparent;
+  color: #fafafa;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 4px 12px;
+  text-decoration: underline;
+  transition: all 200ms linear;
+}
+.actions__link:hover {
+  opacity: 1;
+}
+
+.configuration__wrapper {
+  padding: 0 12px;
+}
+
+.configuration__item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.configuration__type {
+  font-style: italic;
+  color: #c5c5c5;
+}
+
+.configuration__value {
+  color: #fafafa;
+}
+
+@keyframes apptentive_slide_up {
+  0% {
+    bottom: -480px;
+    opacity: 0.1;
+  }
+  100% {
+    bottom: 10px;
+    opacity: 1;
+  }
+}
+apptentive-message-center,
+apptentive-love-dialog.corner,
+apptentive-note.corner .apptentive-note-content,
+apptentive-survey {
+  animation-name: apptentive_slide_up;
+  animation-duration: 0.35s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-delay: 0;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+apptentive-message-center ::-webkit-scrollbar,
+apptentive-love-dialog ::-webkit-scrollbar,
+apptentive-note .apptentive-note-content ::-webkit-scrollbar,
+apptentive-survey ::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+apptentive-message-center ::-webkit-scrollbar:vertical,
+apptentive-love-dialog ::-webkit-scrollbar:vertical,
+apptentive-note .apptentive-note-content ::-webkit-scrollbar:vertical,
+apptentive-survey ::-webkit-scrollbar:vertical {
+  width: 9px;
+}
+apptentive-message-center ::-webkit-scrollbar:horizontal,
+apptentive-love-dialog ::-webkit-scrollbar:horizontal,
+apptentive-note .apptentive-note-content ::-webkit-scrollbar:horizontal,
+apptentive-survey ::-webkit-scrollbar:horizontal {
+  height: 9px;
+}
+apptentive-message-center ::-webkit-scrollbar-thumb,
+apptentive-love-dialog ::-webkit-scrollbar-thumb,
+apptentive-note .apptentive-note-content ::-webkit-scrollbar-thumb,
+apptentive-survey ::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  border: 2px solid #ffffff; /* should match background, can't be transparent */
+  background-color: rgba(170, 170, 170, 0.8);
+}
+apptentive-message-center ::-webkit-scrollbar-track,
+apptentive-love-dialog ::-webkit-scrollbar-track,
+apptentive-note .apptentive-note-content ::-webkit-scrollbar-track,
+apptentive-survey ::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border-radius: 9px;
+}
+
+apptentive-message-center,
+apptentive-love-dialog,
+apptentive-note .apptentive-note-content,
+apptentive-survey {
+  -webkit-overflow-scrolling: auto !important;
+  overflow-y: auto !important;
+  transform: translate3d(0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+apptentive-message-center *,
+apptentive-love-dialog *,
+apptentive-note .apptentive-note-content *,
+apptentive-survey * {
+  box-sizing: border-box;
+  line-height: normal;
+  -webkit-overflow-scrolling: touch;
+}
+apptentive-message-center a,
+apptentive-love-dialog a,
+apptentive-note .apptentive-note-content a,
+apptentive-survey a {
+  background: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+apptentive-message-center h1,
+apptentive-love-dialog h1,
+apptentive-note .apptentive-note-content h1,
+apptentive-survey h1,
+apptentive-message-center h2,
+apptentive-love-dialog h2,
+apptentive-note .apptentive-note-content h2,
+apptentive-survey h2,
+apptentive-message-center h3,
+apptentive-love-dialog h3,
+apptentive-note .apptentive-note-content h3,
+apptentive-survey h3,
+apptentive-message-center h4,
+apptentive-love-dialog h4,
+apptentive-note .apptentive-note-content h4,
+apptentive-survey h4,
+apptentive-message-center p,
+apptentive-love-dialog p,
+apptentive-note .apptentive-note-content p,
+apptentive-survey p {
+  margin: 0;
+}
+
+apptentive-love-dialog .apptentive-love-dialog-actions button.apptentive-love-dialog-action,
+apptentive-survey button.apptentive-survey__button,
+apptentive-survey button.submit,
+.apptentive-button--primary {
+  border-radius: 4px;
+  border: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: block;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  height: auto;
+  letter-spacing: 0.5px;
+  line-height: normal;
+  outline: 0;
+  overflow: visible;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  zoom: 1;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions button.apptentive-love-dialog-action:active,
+apptentive-survey button.apptentive-survey__button:active,
+apptentive-survey button.submit:active,
+.apptentive-button--primary:active {
+  letter-spacing: 2px;
+  box-shadow: none;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions button.apptentive-love-dialog-action:disabled,
+apptentive-survey button.apptentive-survey__button:disabled,
+apptentive-survey button.submit:disabled,
+.apptentive-button--primary:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.apptentive-typography__header {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #555555;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.apptentive-typography__lead {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #555555;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+}
+
+.apptentive-typography__body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #555555;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.apptentive-typography__description {
+  color: #555555;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+}
+.apptentive-typography__description--tall {
+  line-height: 1.15;
+}
+
+.apptentive-typography__alert {
+  color: #b10606;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.apptentive-appbar {
+  align-items: center;
+  background: #dc2636;
+  color: #ffffff;
+  display: flex;
+  flex-shrink: 0;
+  height: 44px;
+  justify-content: space-between;
+  position: relative;
+}
+.apptentive-appbar__icon {
+  background: transparent no-repeat left center;
+  background-size: contain;
+  height: 32px;
+  max-width: 80px;
+  width: 80px;
+}
+.apptentive-appbar__title {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: inherit;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: inherit;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.apptentive-appbar__actions {
+  align-items: center;
+  display: flex;
+}
+.apptentive-appbar__action {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  height: 32px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: 32px;
+  z-index: 1;
+}
+.apptentive-appbar__action--close {
+  padding: 6px;
+}
+.apptentive-appbar__action--close::before,
+.apptentive-appbar__action--close::after {
+  background-color: #ffffff;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  width: 18px;
+}
+.apptentive-appbar__action--close::before {
+  transform: translate(1px, -1px) rotate(45deg);
+}
+.apptentive-appbar__action--close::after {
+  transform: translate(1px, -1px) rotate(-45deg);
+}
+.apptentive-appbar__action--minimize {
+  padding: 7px;
+}
+.apptentive-appbar__action--minimize::before,
+.apptentive-appbar__action--minimize::after {
+  background-color: #ffffff;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  transform: translate(1px, -1px);
+  transition: 200ms transform ease-in-out;
+}
+.apptentive-appbar__action--minimize--active::after {
+  transform: translate(1px, -1px) rotate(90deg);
+}
+
+.apptentive-interaction__blocked {
+  opacity: 0.5;
+}
+.apptentive-interaction__overlay {
+  position: absolute;
+  top: 86px;
+  width: 92%;
+  height: 364px;
+  z-index: 2;
+  cursor: not-allowed;
+}
+.apptentive-interaction__confirm-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-size: 12px;
+  transition: 300ms ease-out;
+  background: #fcfcfc;
+}
+.apptentive-interaction__confirm-wrapper.closed {
+  height: 0;
+  opacity: 0;
+}
+.apptentive-interaction__confirm-wrapper.opened {
+  height: 42px;
+  padding: 12px 8px;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.14);
+}
+.apptentive-interaction__confirm-wrapper > span {
+  white-space: nowrap;
+}
+.apptentive-interaction__confirm-wrapper > button {
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+.apptentive-interaction__confirm-wrapper__ok {
+  border-radius: 12px;
+  background: #67b95a;
+  color: #ffffff;
+  height: 21px;
+  width: 42px;
+  margin: 0 4px 0 8px;
+}
+.apptentive-interaction__confirm-wrapper__cancel {
+  color: #b10606;
+  padding: 0 2px;
+  background: inherit;
+}
+
+.apptentive-button--primary {
+  background: #478fcc;
+  border-radius: 32px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
+  padding: 8px 32px;
+  text-transform: uppercase;
+  transition: 150ms all linear;
+}
+.apptentive-button--primary:hover:not(:disabled) {
+  background-color: #347dbb;
+}
+.apptentive-button--primary:focus:not(:disabled) {
+  outline: none;
+}
+
+.apptentive-footer {
+  align-items: center;
+  background-color: #dc2636;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  min-height: 24px;
+  z-index: 1;
+}
+.apptentive-footer__link {
+  color: #ffffff;
+  font-size: 14px;
+  padding: 4px 8px;
+  text-decoration: underline;
+}
+
+.apptentive-intro {
+  padding-bottom: 40px;
+  text-align: center;
+}
+.apptentive-intro:empty {
+  display: none;
+}
+
+.apptentive-message {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+}
+.apptentive-message .apptentive-message__content-wrapper {
+  flex: 1 1 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 8px 0;
+  width: 100%;
+}
+.apptentive-message .apptentive-message__content {
+  align-items: center;
+  color: #555555;
+  display: flex;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.375;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: anywhere;
+  padding: 0 8px;
+  text-align: center;
+  width: 100%;
+}
+.apptentive-message .apptentive-message__actions {
+  flex-shrink: 0;
+  width: 100%;
+}
+.apptentive-message .apptentive-message__actions--tall {
+  margin-bottom: 22px;
+}
+
+.apptentive-progress-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #cccccc;
+  border-radius: 4px;
+  display: block;
+  height: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+.apptentive-progress-bar::-webkit-progress-bar {
+  background-color: #cccccc;
+}
+.apptentive-progress-bar::-webkit-progress-value {
+  background-color: #478fcc;
+  border-radius: 4px;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+.apptentive-progress-bar::-moz-progress-bar {
+  border-radius: 4px;
+  background-color: #478fcc;
+  -moz-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.apptentive-step-indicator {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  height: 6px;
+  margin: 0;
+  padding: 0;
+}
+.apptentive-step-indicator__item {
+  border: 1px solid #aaaaaa;
+  border-radius: 20px;
+  margin: 0 4px;
+  max-width: 44px;
+  transition: 200ms all ease-in-out;
+  width: 100%;
+}
+.apptentive-step-indicator__item--current {
+  background-color: #478fcc;
+  border-color: #478fcc;
+  border-width: 3px 2px;
+}
+.apptentive-step-indicator__item--complete {
+  background-color: #555555;
+  border-color: #555555;
+}
+
+.apptentive-textinput {
+  align-self: center;
+  background: #ffffff;
+  border: 1px solid #939393;
+  border-radius: 4px;
+  color: #555555;
+  cursor: text;
+  display: block;
+  flex-shrink: 0;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  height: auto;
+  letter-spacing: inherit;
+  line-height: 1;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 8px 12px;
+  text-align: left;
+  transition: 0.15s background-color, 0.15s border-color, 0.15s box-shadow;
+  width: 100%;
+  z-index: 1;
+  position: inherit;
+  left: inherit;
+  right: inherit;
+  top: inherit;
+  bottom: inherit;
+}
+.apptentive-textinput:focus {
+  box-shadow: 0 0 4px rgba(52, 125, 187, 0.5), 0 2px 0 #fcfcfc inset;
+  border-color: #347dbb;
+  outline: 0;
+}
+.apptentive-textinput--slim {
+  flex-grow: 1;
+  line-height: 12px;
+  margin: 2px 0;
+  padding: 4px 8px;
+}
+.apptentive-textinput--error {
+  border: 1px solid #b10606;
+}
+
+apptentive-survey {
+  z-index: 2147483647;
+  background: #fcfcfc;
+  border-radius: 4px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  font: 14px 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #555555;
+  display: flex;
+  flex-direction: column;
+  height: 475px;
+  width: 360px;
+}
+apptentive-survey .apptentive-survey-intro {
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 17px;
+  line-height: 1.18;
+  padding: 0 20px 40px;
+  text-align: center;
+}
+apptentive-survey .apptentive-survey-intro:empty {
+  display: none;
+}
+apptentive-survey form.apptentive-survey-questions {
+  height: 100%;
+}
+apptentive-survey form.apptentive-survey-questions--linear,
+apptentive-survey form.apptentive-survey-questions--list {
+  overflow-y: scroll;
+  padding: 16px;
+}
+apptentive-survey form.apptentive-survey-questions--linear > .apptentive-interaction__confirm-wrapper.opened,
+apptentive-survey form.apptentive-survey-questions--list > .apptentive-interaction__confirm-wrapper.opened {
+  width: 341px;
+  padding: 0 0 20px;
+}
+apptentive-survey form.apptentive-survey-questions--paged {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+apptentive-survey form.apptentive-survey-questions--paged .apptentive-survey__question-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1 1 100%;
+  overflow: auto;
+  padding: 16px;
+}
+apptentive-survey
+  form.apptentive-survey-questions--paged
+  .apptentive-survey__question-wrapper
+  question.apptentive-survey-question {
+  margin: auto 0;
+  padding-bottom: 0;
+  width: 100%;
+}
+apptentive-survey form.apptentive-survey-questions--paged .apptentive-survey__actions-wrapper {
+  border-top: 1px solid #cccccc;
+  flex-shrink: 0;
+  padding: 16px;
+}
+apptentive-survey
+  form.apptentive-survey-questions--paged
+  .apptentive-survey__actions-wrapper
+  .apptentive-survey__button {
+  margin-bottom: 4px;
+}
+apptentive-survey form.apptentive-survey-questions--paged .apptentive-survey__actions-wrapper apptentive-errors {
+  margin-bottom: 4px;
+}
+apptentive-survey
+  form.apptentive-survey-questions--paged
+  .apptentive-survey__actions-wrapper
+  .apptentive-progress__wrapper {
+  padding-top: 12px;
+}
+apptentive-survey form.apptentive-survey-questions fieldset {
+  display: block;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-after: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+apptentive-survey form.apptentive-survey-questions fieldset legend {
+  display: none;
+}
+apptentive-survey form.apptentive-survey-questions apptentive-errors {
+  display: block;
+  color: #dc2636;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+  padding: 4px;
+  white-space: pre-wrap;
+}
+apptentive-survey form.apptentive-survey-questions apptentive-errors:empty {
+  display: none;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question {
+  background-color: transparent;
+  border-radius: inherit;
+  border-bottom: 1px solid #cccccc;
+  display: block;
+  font-size: inherit;
+  margin-bottom: 24px;
+  max-width: inherit;
+  min-width: inherit;
+  padding-bottom: 24px;
+  position: inherit;
+  text-align: inherit;
+  width: inherit;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  border: 1px solid #939393;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 16px;
+  outline: 0;
+  position: relative;
+  transition: background 100ms ease-in-out;
+  visibility: visible;
+  width: 16px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input[type='checkbox']::before {
+  border-color: #ffffff;
+  border-radius: 1px;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  height: 10px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 1px;
+  width: 6px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input[type='checkbox']:checked {
+  color: #ffffff;
+  background: #478fcc;
+  border-color: #478fcc;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input[type='checkbox']:checked::before {
+  opacity: 1;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input[type='checkbox']:checked
+  ~ label::before {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input[type='checkbox']:focus {
+  border-color: #478fcc;
+  box-shadow: 0 0 0 2px rgba(71, 143, 204, 0.3);
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multiselect
+  answer-choices
+  answer-choice
+  input.other-input {
+  margin-right: 0;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multichoice
+  answer-choices
+  answer-choice
+  input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  margin-right: 12px;
+  align-items: center;
+  border: 1px solid #939393;
+  border-radius: 50%;
+  color: #939393;
+  display: flex;
+  font: inherit;
+  height: 16px;
+  justify-content: center;
+  visibility: visible;
+  width: 16px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multichoice
+  answer-choices
+  answer-choice
+  input[type='radio']::before {
+  background-color: #478fcc;
+  border-radius: 50%;
+  content: '';
+  height: 8px;
+  transform: scale(0);
+  transition: 100ms transform ease-in-out;
+  width: 8px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multichoice
+  answer-choices
+  answer-choice
+  input[type='radio']:checked {
+  border-color: #478fcc;
+  border-width: 2px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multichoice
+  answer-choices
+  answer-choice
+  input[type='radio']:checked::before {
+  transform: scale(1);
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.multichoice
+  answer-choices
+  answer-choice
+  input[type='radio']:focus {
+  border-color: #478fcc;
+  box-shadow: 0 0 0 2px rgba(71, 143, 204, 0.3);
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question.singleline answer-choices {
+  padding-top: 8px;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question.singleline answer-choices answer-choice {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  display: flex;
+  padding: 0;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.singleline
+  answer-choices
+  answer-choice
+  input,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.singleline
+  answer-choices
+  answer-choice
+  textarea {
+  background: #ffffff;
+  border: 1px solid #939393;
+  border-radius: 4px;
+  color: #555555;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: left;
+  transition: 0.15s background-color, 0.15s border-color, 0.15s box-shadow;
+  width: 100%;
+  z-index: 1;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.singleline
+  answer-choices
+  answer-choice
+  input:focus,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.singleline
+  answer-choices
+  answer-choice
+  textarea:focus {
+  box-shadow: 0 0 4px rgba(52, 125, 187, 0.5), 0 2px 0 #fcfcfc inset;
+  border-color: #347dbb;
+  outline: 0;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question.nps answer-choice-container,
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question.range answer-choice-container {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices {
+  display: flex;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices
+  answer-choice,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices
+  answer-choice {
+  box-shadow: none;
+  display: flex;
+  margin-right: -1px;
+  padding: 0;
+  width: 100%;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices
+  answer-choice:first-child
+  label,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices
+  answer-choice:first-child
+  label {
+  border-radius: 4px 0 0 4px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices
+  answer-choice:last-child
+  label,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices
+  answer-choice:last-child
+  label {
+  border-radius: 0 4px 4px 0;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices
+  answer-choice
+  label,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices
+  answer-choice
+  label {
+  border: 1px solid #939393;
+  background-color: #ffffff !important;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 100ms, color 100ms;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices
+  answer-choice
+  input,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices
+  answer-choice
+  input {
+  display: none;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choices
+  answer-choice
+  input:checked
+  + label,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choices
+  answer-choice
+  input:checked
+  + label {
+  background-color: #478fcc !important;
+  border-color: #478fcc;
+  color: #ffffff;
+  z-index: 1;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.nps
+  answer-choice-container
+  answer-choice-labels,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question.range
+  answer-choice-container
+  answer-choice-labels {
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  line-height: 12px;
+  padding-top: 8px;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question:last-of-type {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question h2.apptentive-survey-question-value {
+  color: #555555;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+  line-height: 1.375;
+  margin: 0;
+  margin-bottom: 12px;
+  text-transform: none;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question question-instructions {
+  color: #555555;
+  display: block;
+  font-size: 14px;
+  line-height: 0.857;
+  margin-bottom: 12px;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question answer-choices {
+  display: block;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question answer-choices answer-choice {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question answer-choices answer-choice input,
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question answer-choices answer-choice textarea {
+  align-self: center;
+  background: #ffffff;
+  border-radius: inherit;
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: inherit;
+  font-style: normal;
+  height: auto;
+  letter-spacing: inherit;
+  margin: 0;
+  margin-right: 12px;
+  opacity: 1;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  width: auto;
+  z-index: 1;
+  position: inherit;
+  left: inherit;
+  right: inherit;
+  top: inherit;
+  bottom: inherit;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question
+  answer-choices
+  answer-choice
+  input.other-input {
+  border-radius: 4px;
+  border: 1px solid #939393;
+  color: #555555;
+  cursor: text;
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 12px;
+  margin: 2px 0;
+  padding: 4px 8px;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question
+  answer-choices
+  answer-choice
+  input.other-input:focus {
+  box-shadow: 0 0 4px rgba(52, 125, 187, 0.5), 0 2px 0 #fcfcfc inset;
+  border-color: #347dbb;
+  outline: 0;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question answer-choices answer-choice label {
+  background: none !important;
+  clear: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+  max-width: initial;
+  padding: 8px 0;
+  position: inherit;
+  text-align: left;
+  vertical-align: top;
+  flex: 1;
+}
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question
+  answer-choices
+  answer-choice
+  label:before,
+apptentive-survey
+  form.apptentive-survey-questions
+  .apptentive-survey-question
+  answer-choices
+  answer-choice
+  label:after {
+  display: none;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question invalid-reason {
+  display: block;
+  padding: 8px 0;
+  color: #dc2636;
+}
+apptentive-survey form.apptentive-survey-questions .apptentive-survey-question invalid-reason:empty {
+  display: none;
+}
+apptentive-survey button.apptentive-survey__button,
+apptentive-survey button.submit {
+  background: #478fcc;
+  border-radius: 32px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
+  padding: 8px 32px;
+  text-transform: uppercase;
+  transition: 150ms all linear;
+}
+apptentive-survey button.apptentive-survey__button:hover,
+apptentive-survey button.submit:hover {
+  background-color: #347dbb;
+}
+apptentive-survey .apptentive-disclaimer {
+  text-align: center;
+  padding-top: 16px;
+}
+apptentive-survey .apptentive-survey-footer {
+  align-items: center;
+  background-color: #dc2636;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  min-height: 24px;
+  z-index: 1;
+}
+apptentive-survey .apptentive-survey-footer .apptentive-survey-contact-us,
+apptentive-survey .apptentive-survey-footer__link {
+  color: #ffffff;
+  font-size: 14px;
+  padding: 4px 8px;
+  text-decoration: underline;
+}
+
+@supports (-webkit-touch-callout: none) {
+  apptentive-survey select,
+  apptentive-survey select:focus,
+  apptentive-survey textarea,
+  apptentive-survey textarea:focus,
+  apptentive-survey input,
+  apptentive-survey input:focus {
+    font-size: 16px !important;
+  }
+}
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-survey,
+  apptentive-survey.fixed,
+  apptentive-survey.fixed.center,
+  apptentive-survey.fixed.top-right,
+  apptentive-survey.fixed.top-left,
+  apptentive-survey.fixed.corner,
+  apptentive-survey.fixed.bottom-right,
+  apptentive-survey.fixed.bottom-left,
+  apptentive-survey.fixed.top-center,
+  apptentive-survey.fixed.bottom-center,
+  apptentive-survey.fixed.left-center,
+  apptentive-survey.fixed.right-center {
+    border: 0;
+    border-radius: 0;
+    bottom: 0;
+    padding: 0;
+    box-shadow: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    animation-name: inherit;
+    transform: inherit;
+  }
+  apptentive-survey form.apptentive-survey-questions,
+  apptentive-survey.fixed form.apptentive-survey-questions,
+  apptentive-survey.fixed.center form.apptentive-survey-questions,
+  apptentive-survey.fixed.top-right form.apptentive-survey-questions,
+  apptentive-survey.fixed.top-left form.apptentive-survey-questions,
+  apptentive-survey.fixed.corner form.apptentive-survey-questions,
+  apptentive-survey.fixed.bottom-right form.apptentive-survey-questions,
+  apptentive-survey.fixed.bottom-left form.apptentive-survey-questions,
+  apptentive-survey.fixed.top-center form.apptentive-survey-questions,
+  apptentive-survey.fixed.bottom-center form.apptentive-survey-questions,
+  apptentive-survey.fixed.left-center form.apptentive-survey-questions,
+  apptentive-survey.fixed.right-center form.apptentive-survey-questions {
+    flex-grow: 1;
+  }
+  apptentive-survey.fixed.corner.corner--minimized,
+  apptentive-survey.fixed.bottom-right.bottom-right--minimized,
+  apptentive-survey.fixed.bottom-left.bottom-left--minimized,
+  apptentive-survey.fixed.bottom-center.bottom-center--minimized {
+    transform: translateY(calc(100% - 44px));
+  }
+}
+apptentive-note {
+  z-index: 2147483647;
+}
+apptentive-note.corner .apptentive-note-overlay {
+  display: none;
+}
+apptentive-note.center .apptentive-note-content {
+  max-height: 375px;
+}
+apptentive-note .apptentive-note-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+}
+apptentive-note .apptentive-note-content {
+  width: 340px;
+  z-index: 2;
+  padding: 20px;
+  padding-bottom: 0;
+  max-height: 98vh;
+  max-height: calc(100vh - 120px);
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  color: #555555;
+  font: 14px 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overscroll-behavior: contain;
+}
+apptentive-note .apptentive-note-content .apptentive-note-title {
+  background: #ffffff;
+  position: relative;
+  width: 100%;
+}
+apptentive-note .apptentive-note-content .apptentive-note-title h1 {
+  color: inherit;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: inherit;
+  width: 100%;
+}
+apptentive-note .apptentive-note-content .apptentive-note-body {
+  color: inherit;
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 10px;
+  padding: 4px 0px;
+  text-align: left;
+  width: 100%;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions {
+  background: inherit;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px 0;
+  position: sticky;
+  bottom: 0px;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions .apptentive-note-action {
+  margin-right: 30px;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions .apptentive-note-action h2.apptentive-note-label {
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
+  cursor: pointer;
+  color: #478fcc;
+  margin: 0;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions .apptentive-note-action:last-of-type {
+  margin-right: 0px;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions.tall {
+  flex-direction: column;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions.tall .apptentive-note-action {
+  margin-right: 0px;
+  margin-bottom: 30px;
+}
+apptentive-note .apptentive-note-content .apptentive-note-actions.tall .apptentive-note-action:last-of-type {
+  margin-bottom: 0px;
+}
+
+.apptentive-note-scroll-lock {
+  overflow: hidden;
+}
+
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-note .apptentive-note-content,
+  apptentive-note .apptentive-note-content.fixed,
+  apptentive-note .apptentive-note-content.fixed.center,
+  apptentive-note .apptentive-note-content.fixed.top-right,
+  apptentive-note .apptentive-note-content.fixed.top-left,
+  apptentive-note .apptentive-note-content.fixed.corner,
+  apptentive-note .apptentive-note-content.fixed.bottom-right,
+  apptentive-note .apptentive-note-content.fixed.bottom-left,
+  apptentive-note .apptentive-note-content.fixed.top-center,
+  apptentive-note .apptentive-note-content.fixed.bottom-center,
+  apptentive-note .apptentive-note-content.fixed.left-center,
+  apptentive-note .apptentive-note-content.fixed.right-center {
+    border-radius: 0;
+    bottom: 0;
+    overflow: scroll;
+    right: 0;
+    width: 100%;
+    animation-name: inherit;
+    top: inherit;
+    left: inherit;
+    transform: inherit;
+  }
+}
+apptentive-love-dialog {
+  z-index: 2147483647;
+  background: #fcfcfc;
+  border-radius: 4px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  color: #555555;
+  font: 14px 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+apptentive-love-dialog.corner {
+  width: 258px;
+}
+apptentive-love-dialog.center {
+  width: 340px;
+  max-height: 375px;
+}
+apptentive-love-dialog .apptentive-love-dialog-title {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 20px 20px 10px;
+  position: relative;
+}
+apptentive-love-dialog .apptentive-love-dialog-title h1 {
+  font-family: 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: inherit;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 10px 10px;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions.tall {
+  flex-direction: column;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions.tall .apptentive-love-dialog-action {
+  margin-right: 0px;
+  margin-bottom: 30px;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions.tall .apptentive-love-dialog-action:last-of-type {
+  margin-bottom: 0px;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions button.apptentive-love-dialog-action {
+  background: #efefef;
+  color: #478fcc;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px;
+  margin-bottom: 8px;
+  padding: 12px;
+  width: 100%;
+}
+apptentive-love-dialog .apptentive-love-dialog-actions button.apptentive-love-dialog-action[disabled] {
+  background: #939393;
+}
+apptentive-love-dialog .close-love-dialog {
+  align-self: flex-start;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index: 99;
+}
+
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-love-dialog,
+  apptentive-love-dialog.fixed,
+  apptentive-love-dialog.fixed.center,
+  apptentive-love-dialog.fixed.top-right,
+  apptentive-love-dialog.fixed.top-left,
+  apptentive-love-dialog.fixed.corner,
+  apptentive-love-dialog.fixed.bottom-right,
+  apptentive-love-dialog.fixed.bottom-left,
+  apptentive-love-dialog.fixed.top-center,
+  apptentive-love-dialog.fixed.bottom-center,
+  apptentive-love-dialog.fixed.left-center,
+  apptentive-love-dialog.fixed.right-center {
+    border-radius: 0;
+    border: 0;
+    bottom: 0;
+    box-shadow: none;
+    right: 0;
+    width: 100%;
+    animation-name: inherit;
+    top: inherit;
+    left: inherit;
+    transform: inherit;
+  }
+}
+apptentive-message-center {
+  z-index: 2147483647;
+  background: #fcfcfc;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 4px;
+  font: 14px 'Lato', 'Lato-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #555555;
+  display: flex;
+  flex-direction: column;
+  height: 475px;
+  width: 360px;
+}
+apptentive-message-center .apptentive-message-center__content {
+  flex: 1 1 100%;
+  overflow-y: auto;
+  padding: 16px;
+}
+apptentive-message-center .apptentive-message-center-greeting {
+  padding-bottom: 16px;
+}
+apptentive-message-center .apptentive-message-center-greeting__title {
+  padding-bottom: 16px;
+}
+apptentive-message-center .apptentive-message-center-feedback {
+  padding-bottom: 40px;
+}
+apptentive-message-center .apptentive-message-center-profile {
+  padding-bottom: 16px;
+}
+apptentive-message-center .apptentive-message-center-profile__title {
+  padding-bottom: 16px;
+}
+apptentive-message-center .apptentive-message-center-profile__name {
+  display: block;
+  padding-bottom: 16px;
+}
+apptentive-message-center .apptentive-message-center-profile__email {
+  display: block;
+}
+apptentive-message-center .apptentive-message-center__actions {
+  display: flex;
+  flex-direction: column;
+}
+apptentive-message-center apptentive-errors {
+  display: block;
+  color: #dc2636;
+  font-size: 12px;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+@supports (-webkit-touch-callout: none) {
+  apptentive-message-center select,
+  apptentive-message-center select:focus,
+  apptentive-message-center textarea,
+  apptentive-message-center textarea:focus,
+  apptentive-message-center input,
+  apptentive-message-center input:focus {
+    font-size: 16px !important;
+  }
+}
+/* ----------- Generic ----------- */
+@media only screen and (max-device-width: 568px) {
+  apptentive-message-center,
+  apptentive-message-center.fixed,
+  apptentive-message-center.fixed.center,
+  apptentive-message-center.fixed.top-right,
+  apptentive-message-center.fixed.top-left,
+  apptentive-message-center.fixed.corner,
+  apptentive-message-center.fixed.bottom-right,
+  apptentive-message-center.fixed.bottom-left,
+  apptentive-message-center.fixed.top-center,
+  apptentive-message-center.fixed.bottom-center,
+  apptentive-message-center.fixed.left-center,
+  apptentive-message-center.fixed.right-center {
+    border: 0;
+    border-radius: 0;
+    bottom: 0;
+    padding: 0;
+    box-shadow: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    animation-name: inherit;
+    transform: inherit;
+  }
+  apptentive-message-center.fixed.corner.corner--minimized,
+  apptentive-message-center.fixed.bottom-right.bottom-right--minimized,
+  apptentive-message-center.fixed.bottom-left.bottom-left--minimized,
+  apptentive-message-center.fixed.bottom-center.bottom-center--minimized {
+    transform: translateY(calc(100% - 44px));
+  }
+}
+.fixed {
+  position: fixed;
+  transition: 200ms transform ease-in-out;
+}
+.fixed.top-right {
+  top: 10px;
+  right: 10px;
+}
+.fixed.top-left {
+  top: 10px;
+  left: 10px;
+}
+.fixed.top-center {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.fixed.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.fixed.left-center {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fixed.right-center {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fixed.corner,
+.fixed.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+.fixed.corner--minimized,
+.fixed.bottom-right--minimized {
+  transform: translateY(calc(100% - 34px));
+}
+.fixed.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+.fixed.bottom-left--minimized {
+  transform: translateY(calc(100% - 34px));
+}
+.fixed.bottom-center {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.fixed.bottom-center--minimized {
+  transform: translateY(calc(100% - 34px));
+}
+
+/*# sourceMappingURL=styles.css.map */

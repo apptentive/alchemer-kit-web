@@ -1,0 +1,6 @@
+input[type='radio'] {
+  visibility: hidden;
+}
+
+@import './tester.scss';
+@import '../../../sass/styles.scss';

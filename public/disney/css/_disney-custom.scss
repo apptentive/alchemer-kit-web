@@ -1,0 +1,199 @@
+apptentive-survey {
+  border-radius: 10px;
+  background-color: #01182f;
+  border: 0;
+  width: 260px;
+
+  .apptentive-survey-title {
+    background-color: transparent;
+    border-radius: 10px;
+    background-color: #01182f;
+    background-image: url(../images/cbimage.png);
+    background-size: 296px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-top: 125px;
+    position: relative;
+
+    .apptentive-survey-title-icon {
+      background-image: url(../images/disney-resort-shanghai.png);
+      background-size: 125px;
+      background-repeat: no-repeat;
+      background-position: center 10px;
+      max-width: 125px;
+      width: 125px;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      margin-left: -62.5px;
+      height: 80px;
+    }
+
+    h1 {
+      display: block;
+      top: 113px;
+      background-color: #01182f;
+      padding: 6px 0 0 0;
+      margin: 0;
+      font-size: 15px;
+      display: block;
+      height: 22px;
+    }
+
+    .close-survey {
+      font-size: 12px;
+    }
+  }
+
+  .apptentive-survey-intro {
+    display: none;
+    overflow-y: auto;
+  }
+
+  form.apptentive-survey-questions {
+    // Enable the below to hide the scrollbars on short Surveys
+    // height: auto;
+    // overflow-y: auto;
+
+    .apptentive-survey-question {
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+
+      h2.apptentive-survey-question-value {
+        font-size: 12px;
+        line-height: 13px;
+        text-align: center;
+        letter-spacing: -0.171429px;
+        color: #ffffff;
+        width: 200px;
+        margin: 0 auto;
+      }
+
+      question-instructions {
+        color: #ffffff;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      answer-choices {
+        answer-choice {
+          background: transparent;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .apptentive-survey-question.multiselect {
+      question-instructions {
+        margin-bottom: 4px;
+      }
+
+      answer-choices {
+        answer-choice {
+          margin: 0;
+          border: 0;
+          padding: 4px 8px 2px;
+
+          &:first-of-type {
+            margin: 0;
+            border: 0;
+            padding: 4px 8px 2px;
+          }
+
+          input {
+            margin-right: 8px;
+          }
+
+          label {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .apptentive-survey-question.range {
+      answer-choice-container {
+        background: transparent;
+        box-shadow: none;
+        background-image: url('data:image/svg+xml;utf8,<svg width="189" height="1" viewBox="0 0 189 1" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5H188.5" stroke="white" stroke-linecap="square"/></svg>');
+        background-repeat: no-repeat;
+        background-position: top center;
+        margin: 0 -16px;
+
+        answer-choices {
+          height: auto;
+          padding: 0;
+
+          answer-choice {
+            input {
+              margin: -30px 10px 0 10px;
+
+              &:checked {
+                background-color: transparent;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAyNCAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUgMTBDNy43NjE0MiAxMCAxMCA3Ljc2MTQyIDEwIDVDMTAgMi4yMzg1OCA3Ljc2MTQyIDAgNSAwQzIuMjM4NTggMCAwIDIuMjM4NTggMCA1QzAgNy43NjE0MiAyLjIzODU4IDEwIDUgMTBaIiBmaWxsPSIjMjQ4NEU5Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOSAxMEMyMS43NjE0IDEwIDI0IDcuNzYxNDIgMjQgNUMyNCAyLjIzODU4IDIxLjc2MTQgMCAxOSAwQzE2LjIzODYgMCAxNCAyLjIzODU4IDE0IDVDMTQgNy43NjE0MiAxNi4yMzg2IDEwIDE5IDEwWiIgZmlsbD0iIzI0ODRFOSIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMTlDMTUuODY2IDE5IDE5IDE1Ljg2NiAxOSAxMkMxOSA4LjEzNDAxIDE1Ljg2NiA1IDEyIDVDOC4xMzQwMSA1IDUgOC4xMzQwMSA1IDEyQzUgMTUuODY2IDguMTM0MDEgMTkgMTIgMTlaIiBmaWxsPSIjMjQ4NEU5Ii8+PC9zdmc+Cg==);
+                appearance: unset;
+                width: 24px;
+                height: 19px;
+                margin: -36px 10px 0 10px;
+
+                + {
+                  label {
+                    font-size: inherit;
+                    line-height: inherit;
+                  }
+                }
+              }
+            }
+
+            label {
+              font-size: inherit;
+              line-height: inherit;
+              transform: translateY(4px);
+            }
+          }
+        }
+
+        answer-choice-labels {
+          display: none;
+        }
+      }
+    }
+
+    button.submit {
+      background: #2b98f0;
+      color: #fff;
+      font-size: 13px;
+      width: 147px;
+      margin: 0 auto;
+      padding: 7px 0;
+      font-weight: bold;
+      letter-spacing: -0.185714px;
+      margin-top: 8px;
+    }
+  }
+
+  .apptentive-survey-footer {
+    height: 30px;
+    background-color: #01182f;
+    text-align: center;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: -0.142857px;
+    text-decoration-line: underline;
+    color: #ffffff;
+
+    .powered-by {
+      text-align: center;
+      width: 100%;
+
+      .start {
+        color: #ffffff;
+      }
+
+      .end {
+        color: #ffffff;
+      }
+    }
+  }
+}
