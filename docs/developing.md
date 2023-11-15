@@ -32,7 +32,7 @@ If using VSCode, these are recommended extensions to have installed to provide a
 
 ### Install
 
-After cloning the repository, `cd` into the `apptentive-javascript` directory and install the npm packages:
+After cloning the repository, `cd` into the `alchemer-kit-web` directory and install the npm packages:
 
 ```sh
 $ npm install

@@ -28,7 +28,6 @@ A standard process for this is as follows:
 - Production GitHub workflow runs which sees the new commit and performs steps listed above
 - Changes are added to a new PR and opened automatically
   - This is called a release PR
-  - Example: <https://github.com/apptentive/apptentive-javascript/pull/199>
 
 From here there are two paths forward:
 

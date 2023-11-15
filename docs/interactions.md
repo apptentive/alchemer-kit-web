@@ -67,7 +67,7 @@ Interactions can be quite complex with all of the options and ways to display in
 
 Here we know that we have a `TextModal` interaction which is a Note to the SDK that has a `title`, `body` text, and a collection of `actions`. When this gets triggered via an event, the SDK passes this configuration into a render method that builds the HTML to insert into the page for the user to interact with. It's really as simple as that!
 
-_If you want to see what happens during a render, check out the note's [render method](https://github.com/apptentive/apptentive-javascript/blob/main/src/interactions/note.ts#L238)._
+_If you want to see what happens during a render, check out the note's [render method](https://github.com/apptentive/alchemer-kit-web/blob/main/src/interactions/note.ts#L238)._
 
 ## Targets and Criteria
 

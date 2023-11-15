@@ -7,7 +7,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/apptentive/apptentive-javascript.git"
+    "url": "git+ssh://git@github.com/apptentive/alchemer-kit-web .git"
   },
   "keywords": [
     "apptentive",
