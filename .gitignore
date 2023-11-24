@@ -14,3 +14,7 @@ server/certs
 /test-results/
 /playwright-report/
 /playwright/.cache/
+.github/
+docs/
+.release-please-manifest.json
+release-please-manifest.json
