@@ -212,7 +212,7 @@ export default class ApptentiveSurveyPaged extends ApptentiveInteractionSurveyBa
       return;
     }
 
-    this.handleClose(this.surveyContainer, this.answers);
+    this.surveyContainer.remove();
   }
 
   /**

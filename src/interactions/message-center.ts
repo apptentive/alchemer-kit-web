@@ -2,6 +2,7 @@
 import browserEvent from '../browser-event';
 import browserEvents from '../constants/browser-events';
 import internalEvents from '../constants/events';
+
 import ApptentiveInteraction from './interaction-base';
 import type ApptentiveBase from '../base';
 import { IMessageCenterConfiguration } from '../interfaces/interactions/IMessageCenterConfiguration';
@@ -198,6 +199,7 @@ export default class ApptentiveMessageCenter extends ApptentiveInteraction<IMess
       .value.trim();
 
     this.container.querySelector<HTMLButtonElement>(messageCenterSelectors.submitButton)!.disabled = true;
+
     this.sdk.createMessage({
       body: message,
       success: this.submitted,

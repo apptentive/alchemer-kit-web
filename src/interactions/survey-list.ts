@@ -201,7 +201,7 @@ export default class ApptentiveSurveyList extends ApptentiveInteractionSurveyBas
       this.surveyContainer.querySelector<HTMLFormElement>('form.apptentive-survey-questions')!.style.display = 'none';
       this.surveyContainer.querySelector<HTMLElement>(surveySelectors.thankYou)!.style.display = '';
     } else {
-      this.handleClose(this.surveyContainer, this.getSelectedQuestionAnswers());
+      this.surveyContainer.remove();
     }
 
     browserEvent(browserEvents.APPTENTIVE_SURVEY_SUBMIT, { interaction_id: this.interaction.id, answers });
