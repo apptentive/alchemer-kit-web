@@ -42,7 +42,7 @@ export default class ApptentiveInteractionSurveyBase extends ApptentiveInteracti
    * @param answers
    */
   handleClose(container: HTMLElement, answers: IAnswers) {
-    const isTYScreen = this.surveyContainer.querySelector<HTMLElement>(surveySelectors.thankYou)!.style.display === '';
+    const isTYScreen = this.surveyContainer.querySelector<HTMLElement>(surveySelectors.thankYou)?.style.display === '';
     if (isTYScreen) {
       this.dismiss(internalEvents.APPTENTIVE_SURVEY_CLOSE);
       return;
