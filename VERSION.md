@@ -1,5 +1,7 @@
 | Version | URL                                                       | Integrity Hash                                                                                  |
 | ------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 0.13.11 | https://sdk.apptentive.com/v1/0.13.11/sdk.min.js          | sha512-U1O3jHPZCwPnMP8rdoBhCtcBcBCeRAM6FuE5bCZZN2x5U5r8AJrOuXbZh66v9r0McE2C/dhBeV4hreJ9KawyKQ== |
+| 0.13.11 | https://sdk.digital.eu.alchemer.com/v1/0.13.11/sdk.min.js | sha512-KnEQJo6T4uRZHr0tITQJ51RzH7jF4S3syylQOSbLS3dIMvzuvBfRwFGPJ3Jiz5YvvMUBtruByNwv8EfWUfiakQ== |
 | 0.13.10 | https://sdk.apptentive.com/v1/0.13.10/sdk.min.js          | sha512-lUcCrFeTNZBaLs7cXGsDPUikdj+UDM2skaxIBM+DyBlc9JTn3oLIzssdJsu+SOdZklj8Il8nVSARVl1iOn+bxw== |
 | 0.13.10 | https://sdk.digital.eu.alchemer.com/v1/0.13.10/sdk.min.js | sha512-6j80zYnYWLivUsz+8P3aoBk84lLgfpQKMMHmEA9EyFmI+CyEkbrXUJPV2SXFSOptvg+NcAJzBBrLCsNgW37uww== |
 | 0.13.9  | https://sdk.apptentive.com/v1/0.13.9/sdk.min.js           | sha512-ZM5yPM9HACjMs371Fk8MDHN/lNtJ2pD2A2QX7GamObcn3bJFJLK5HCjHaPvbqOUcIuMRYgatuAaZgX71+4+Vlw== |
